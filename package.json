@@ -1,0 +1,21 @@
+{
+  "name": "news-explorer-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for project news-explorer",
+  "main": "index.js",
+  "scripts": {
+    "dev": "",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuliya-pavlova/news-explorer-frontend.git"
+  },
+  "keywords": [],
+  "author": "Chechulnikova Yuliya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuliya-pavlova/news-explorer-frontend/issues"
+  },
+  "homepage": "https://github.com/yuliya-pavlova/news-explorer-frontend#readme"
+}
