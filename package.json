@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/yuliya-pavlova/news-explorer-frontend/issues"
   },
-  "homepage": "https://github.com/yuliya-pavlova/news-explorer-frontend#readme",
+  "homepage": "https://github.com/yuliya-pavlova/news-explorer-frontend",
   "devDependencies": {
     "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
