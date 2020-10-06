@@ -1,0 +1,8 @@
+.header {
+  width: 1210px;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  justify-content: space-between;
+  font-family: 'Inter', 'Helvetica', 'Arial', 'sans-serif';
+}
