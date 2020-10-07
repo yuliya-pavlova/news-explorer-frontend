@@ -9,12 +9,17 @@
 <body class="main-page">
   <div class="page">
     <header class="header">
-      <ul class="header__nav">
-        <li><a href="#" class="">Главная</a></li>
-        <li><a href="#" class="">Авторизоваться</a></li>
-    </ul>
-    </header>
-    <div class="content">
+      <nav class="main-menu">
+        <div class="main-menu__container">
+          <div class="main-menu__item">
+            <a class="main-menu__link" href="">NewsExplorer</a>
+          </div>
+          <div class="main-menu__item">
+            <a class="main-menu__link" href="">Главная</a>
+            <button class="main-menu__button">Авторизоваться</button>
+          </div>
+        </div>
+      </nav>
       <section class="lead">
         <h1 class="lead__title">Что творится в мире?</h1>
         <p class="lead__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
@@ -26,6 +31,8 @@
       <section class="search-results">
         <h2 class="search-results__title">Результаты поиска</h2>
       </section>
+    </header>
+    <div class="content">
     </div>
   </div>
 </body>

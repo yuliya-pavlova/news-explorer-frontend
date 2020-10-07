@@ -1,8 +1,12 @@
+@import url('./header__nav.css');
+@import url('./header__link.css');
+
 .header {
-  width: 1210px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
-  display: none;
-  justify-content: space-between;
   font-family: 'Inter', 'Helvetica', 'Arial', 'sans-serif';
+  background-image: url(../../images/search.png);
+  background-size: cover;
+  height: 576px;
 }

@@ -3,6 +3,7 @@
 @import url('../blocks/page/page.css');
 @import url('../blocks/search-results/search-results.css');
 @import url('../blocks/search-form/search-form.css');
+@import url('../blocks/main-menu/main-menu.css');
 
 @font-face {
   font-family: 'Roboto Slab';
