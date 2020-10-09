@@ -6,6 +6,7 @@
 @import url('../blocks/main-menu/main-menu.css');
 @import url('../blocks/cards/cards.css');
 @import url('../blocks/author/author.css');
+@import url('../blocks/footer/footer.css');
 
 @font-face {
   font-family: 'Roboto Slab';
