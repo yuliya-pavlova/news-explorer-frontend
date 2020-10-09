@@ -1,15 +1,3 @@
-.main-menu__link {
-  border: none;
-  cursor: pointer;
-  background-color: inherit;
-  padding: 0;
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 80px;
-  text-decoration: none;
-  color: #B6BCBF;
-  display:block;
-  margin-right:32px;
+.main-menu__item {
+
 }

@@ -6,4 +6,11 @@
   border-radius: 100px;
   z-index: 1;
   margin-left: -70px;
+  outline: none;
+  font-family: Roboto;
+ font-style: normal;
+ font-weight: 500;
+ font-size: 18px;
+ line-height: 24px;
+ color: #FFFFFF;
 }
