@@ -2,11 +2,8 @@
 @import url('./header__link.css');
 
 .header {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
   font-family: 'Inter', 'Helvetica', 'Arial', 'sans-serif';
-  background-image: url(../../images/search.png);
+  background: url(../../images/search.png) no-repeat 50%;;
   background-size: cover;
   height: 576px;
 }

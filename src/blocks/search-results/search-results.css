@@ -1,1 +1,6 @@
 @import url('./search-results__title.css');
+
+.search-results {
+  min-height: 576px;
+  margin: 80px 104px;
+}

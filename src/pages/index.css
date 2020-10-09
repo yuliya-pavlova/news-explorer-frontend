@@ -4,6 +4,7 @@
 @import url('../blocks/search-results/search-results.css');
 @import url('../blocks/search-form/search-form.css');
 @import url('../blocks/main-menu/main-menu.css');
+@import url('../blocks/cards/cards.css');
 
 @font-face {
   font-family: 'Roboto Slab';
@@ -27,4 +28,20 @@
   font-weight: 500;
   font-display: swap;
   src: url('../fonts/roboto-regular.woff') format("woff");
+}
+
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style:  normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url('../fonts/sourcesanspro-regular.woff') format("woff");
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  font-style:  normal;
+  font-weight: bold;
+  font-display: swap;
+  src: url('../fonts/robotoslab-regular.woff') format("woff");
 }
