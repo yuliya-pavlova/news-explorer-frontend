@@ -1,13 +1,12 @@
 .page {
   font-family: 'Inter', 'Helvetica', 'Arial', 'sans-serif';
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 
 }
 
 .main-page {
-  margin: 0 auto;
-  position: relative;
-  display: flex;
-  padding: 0;
-  box-sizing: border-box;
-  max-width: 1440px;
+  margin: 0;
 }

@@ -1,0 +1,9 @@
+@import url(./author__container.css);
+@import url(./author__description.css);
+@import url(./author__image.css);
+@import url(./author__main-text.css);
+@import url(./author__title.css);
+
+.author {
+  background: #FFFFFF;
+}

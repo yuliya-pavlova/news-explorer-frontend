@@ -10,5 +10,5 @@
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  width: 1232px;
+  max-width: 1232px;
 }
