@@ -1,4 +1,4 @@
-.popup__button {
+.form__button {
   background: #2F71E5;
   box-shadow: 0px 5px 15px rgba(14, 26, 57, 0.2);
   border-radius: 100px;
@@ -10,4 +10,5 @@
   color: #FFFFFF;
   padding: 21.14px 148.57px 18.86px 150.71px;
   margin-bottom: 16px;
+  border: none;
 }

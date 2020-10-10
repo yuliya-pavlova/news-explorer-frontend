@@ -107,15 +107,20 @@
   </div>
   <div class="popup">
     <div class="popup__content">
-      <img src="" alt="" class="popup__close">
+      <img src="./images/close.svg" alt="" class="popup__close">
       <h3 class="popup__title">Вход</h3>
-      <form class="popup__form" name="new">
-          <input type="text" name="email" class="popup__input" placeholder="Введите почту">
+      <form class="popup__form" name="formLogin">
+          <label class="form__label" for="formLoginEmail">Email</label>
+          <input type="text" name="email" id="formLoginEmail" class="form__input" placeholder="Введите почту">
           <span type="text" id="email-error" class="error"></span>
-          <input type="url" name="password" class="popup__input" placeholder="Введите пароль">
+          <label class="form__label" for="formLoginPassword">Пароль</label>
+          <input type="url" name="password" id="formLoginPassword" class="form__input" placeholder="Введите пароль">
           <span type="text" id="password-error" class="error"></span>
-          <button type class="popup__button">Войти</button>
-          <span class="popup__text">или <span class="popup__link">Зарегистрироваться</span></span>
+          <button type class="form__button form__button_disabled">Войти</button>
+          <p class="popup__footer">
+            <span class="popup__text">или </span>
+            <button class="popup__link">Зарегистрироваться</button>
+          </p>
       </form>
     </div>
   </div>

@@ -10,6 +10,7 @@
 @import url('../blocks/circle-preloader/circle-preloader.css');
 @import url('../blocks/not-found/not-found.css');
 @import url('../blocks/popup/popup.css');
+@import url('../blocks/form/form.css');
 
 .main-page {
   margin: 0;
