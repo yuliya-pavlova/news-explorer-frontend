@@ -8,6 +8,15 @@
 @import url('../blocks/author/author.css');
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/circle-preloader/circle-preloader.css');
+@import url('../blocks/not-found/not-found.css');
+
+.main-page {
+  margin: 0;
+  background: #FFFFFF;
+}
+.element_not-visible {
+  display: none;
+}
 
 @font-face {
   font-family: 'Roboto Slab';
