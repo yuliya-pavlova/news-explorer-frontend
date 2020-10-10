@@ -8,7 +8,9 @@
   font-size: 18px;
   line-height: 24px;
   color: #FFFFFF;
-  padding: 21.14px 148.57px 18.86px 150.71px;
+  padding: 0;
   margin-bottom: 16px;
   border: none;
+  width: 100%;
+  height: 64px;
 }

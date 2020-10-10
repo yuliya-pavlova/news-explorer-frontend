@@ -105,7 +105,7 @@
       </div>
     </footer>
   </div>
-  <div class="popup">
+  <div class="popup element_not-visible">
     <div class="popup__content">
       <img src="./images/close.svg" alt="" class="popup__close">
       <h3 class="popup__title">Вход</h3>
@@ -114,12 +114,35 @@
           <input type="text" name="email" id="formLoginEmail" class="form__input" placeholder="Введите почту">
           <span type="text" id="email-error" class="error"></span>
           <label class="form__label" for="formLoginPassword">Пароль</label>
-          <input type="url" name="password" id="formLoginPassword" class="form__input" placeholder="Введите пароль">
+          <input type="password" name="password" id="formLoginPassword" class="form__input" placeholder="Введите пароль">
           <span type="text" id="password-error" class="error"></span>
           <button type class="form__button form__button_disabled">Войти</button>
           <p class="popup__footer">
             <span class="popup__text">или </span>
             <button class="popup__link">Зарегистрироваться</button>
+          </p>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup element_not-visible">
+    <div class="popup__content">
+      <img src="./images/close.svg" alt="" class="popup__close">
+      <h3 class="popup__title">Регистрация</h3>
+      <form class="popup__form" name="formRegistration">
+          <label class="form__label" for="formRegistrationEmail">Email</label>
+          <input type="text" name="email" id="formRegistrationEmail" class="form__input" placeholder="Введите почту">
+          <span type="text" id="email-error" class="error"></span>
+          <label class="form__label" for="formRegistrationPassword">Пароль</label>
+          <input type="password" name="password" id="formRegistrationPassword" class="form__input" placeholder="Введите пароль">
+          <span type="text" id="password-error" class="error"></span>
+          <label class="form__label" for="formRegistrationName">Имя</label>
+          <input type="text" name="name" class="form__input" id="formRegistrationName" placeholder="Введите своё имя">
+          <span type="text" id="name-error" class="error"></span>
+          <button type class="form__button form__button_disabled">Зарегистрироваться</button>
+          <p class="popup__footer">
+            <span class="popup__text">или </span>
+            <button class="popup__link">Войти</button>
           </p>
       </form>
     </div>
