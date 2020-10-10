@@ -1,7 +1,7 @@
 @import url('./search-results__title.css');
+@import url('./search-results__container.css');
+@import url('./search-results__preloader.css');
 
 .search-results {
-  min-height: 576px;
-  padding: 80px 104px;
   background: #F5F6F7;
 }

@@ -7,6 +7,7 @@
 @import url('../blocks/cards/cards.css');
 @import url('../blocks/author/author.css');
 @import url('../blocks/footer/footer.css');
+@import url('../blocks/circle-preloader/circle-preloader.css');
 
 @font-face {
   font-family: 'Roboto Slab';
