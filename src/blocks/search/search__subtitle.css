@@ -1,13 +1,9 @@
-.lead__subtitle {
+.search__subtitle {
   font-style: normal;
   font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  text-align: center;
   color: #FFFFFF;
-  padding-top: 32px;
-  padding-bottom: 64px;
-  margin: 0 auto;
-  max-width: 545px;
+  margin-bottom: 62px;
 }

@@ -1,0 +1,8 @@
+@import url('./search__subtitle.css');
+@import url('./search__title.css');
+@import url('./search__container.css');
+
+.search {
+  margin-left: auto;
+  margin-right: auto;
+}
