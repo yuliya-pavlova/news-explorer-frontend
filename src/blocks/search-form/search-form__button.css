@@ -15,3 +15,11 @@
   color: #FFFFFF;
   border: none;
 }
+
+.search-form__button:hover {
+  background: #347EFF;
+}
+
+.search-form__button:active {
+  background: #2A65CC;
+}

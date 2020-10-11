@@ -1,0 +1,14 @@
+.cards__save-button {
+  border: none;
+  width: 40px;
+  height: 40px;
+  background-color: #FFFFFF;
+  position: absolute;
+  top: 21px;
+  right: 29px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

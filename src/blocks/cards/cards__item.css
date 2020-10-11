@@ -2,6 +2,7 @@
   max-width: 400px;
   max-height: 576px;
   margin-bottom: 64px;
+  position: relative;
 }
 
 .cards__item:nth-of-type(3n+2) {

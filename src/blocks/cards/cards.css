@@ -7,10 +7,15 @@
 @import url('./cards_button.css');
 @import url('./cards__more-cards.css');
 @import url('./cards__text-container.css');
+@import url('./cards__save-icon.css');
+@import url('./cards__save-button.css');
+@import url('./cards__save-icon_selected.css');
+@import url('./cards__auth-message.css');
 
 .cards {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
   max-width: 1232px;
+  position: relative;
 }
