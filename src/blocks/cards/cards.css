@@ -6,6 +6,7 @@
 @import url('./cards__title.css');
 @import url('./cards_button.css');
 @import url('./cards__more-cards.css');
+@import url('./cards__text-container.css');
 
 .cards {
   display: flex;
