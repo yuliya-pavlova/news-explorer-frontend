@@ -10,7 +10,9 @@
 @import url('./cards__save-icon.css');
 @import url('./cards__save-button.css');
 @import url('./cards__save-icon_selected.css');
-@import url('./cards__auth-message.css');
+@import url('./cards__message.css');
+@import url('./cards__delete-icon.css');
+@import url('./cards__delete-icon_selected.css');
 
 .cards {
   display: flex;
