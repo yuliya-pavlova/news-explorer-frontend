@@ -13,6 +13,7 @@
 @import url('./cards__message.css');
 @import url('./cards__delete-icon.css');
 @import url('./cards__delete-icon_selected.css');
+@import url('./cards__keywords.css');
 
 .cards {
   display: flex;

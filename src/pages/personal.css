@@ -4,6 +4,7 @@
 @import url('../blocks/search-results/search-results.css');
 @import url('../blocks/main-menu/main-menu.css');
 @import url('../blocks/cards/cards.css');
+@import url('../blocks/footer/footer.css');
 
 .main-page {
   margin: 0;
