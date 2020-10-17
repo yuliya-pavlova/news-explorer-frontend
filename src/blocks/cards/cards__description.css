@@ -7,4 +7,16 @@
   max-width: 352px;
   height: 110px;
   margin-left: 20px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+}
+
+@media (max-width: 1024px) {
+  .cards_description {
+    height: 88px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
 }

@@ -12,3 +12,10 @@
   justify-content: center;
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .cards__save-button {
+    top: 8px;
+    right: 8px;
+  }
+}

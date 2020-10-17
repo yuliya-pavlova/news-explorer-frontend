@@ -22,3 +22,9 @@
   max-width: 1232px;
   position: relative;
 }
+
+@media (max-width: 1024px) {
+  .cards {
+    max-width: 688px;
+  }
+}

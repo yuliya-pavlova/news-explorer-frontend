@@ -6,3 +6,10 @@
   object-position: top;
   margin-right: 56px;
 }
+
+@media (max-width: 1024px) {
+  .author__image {
+    width: 232px;
+    height: 232px;
+  }
+}

@@ -1,4 +1,12 @@
 .footer__container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 450px;
+}
+
+@media (max-width: 1024px) {
+  .footer__container  {
+    width: 320px;
+  }
 }

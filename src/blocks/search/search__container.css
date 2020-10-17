@@ -2,3 +2,9 @@
   width: 608px;
   margin: auto;
 }
+
+@media (max-width: 1024px) {
+  .search__container {
+    width: 448px;
+  }
+}

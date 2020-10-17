@@ -2,3 +2,9 @@
   min-height: 576px;
   padding: 46px 104px;
 }
+
+@media (max-width: 1024px) {
+  .search-results__container {
+    padding: 40px 40px;
+  }
+}

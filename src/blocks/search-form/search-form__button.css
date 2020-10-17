@@ -23,3 +23,11 @@
 .search-form__button:active {
   background: #2A65CC;
 }
+
+@media (max-width: 1024px) {
+  .search-form__button {
+    width: 160px;
+    height: 56px;
+    margin-left: -160px;
+  }
+}

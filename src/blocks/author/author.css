@@ -10,3 +10,10 @@
   display: flex;
   margin: 66px 216px 38px 104px;
 }
+
+
+@media (max-width: 1024px) {
+  .author  {
+  margin: 40px 40px 72px 40px;
+  }
+}
