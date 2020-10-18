@@ -21,3 +21,10 @@
     margin-left: 18px;
   }
 }
+
+@media (max-width: 720px) {
+  .cards_description {
+    max-width: 256px;
+    margin-bottom: 10px;
+  }
+}

@@ -12,3 +12,11 @@
     margin-bottom: 12px;
   }
 }
+
+@media (max-width: 720px) {
+  .cards__image {
+    width: 288px;
+    height: 196px;
+    margin-bottom: 16px;
+  }
+}

@@ -18,3 +18,10 @@
     min-height: 70px;
   }
 }
+
+@media (max-width: 720px) {
+  .footer  {
+    min-height: 98px;
+    flex-direction: column-reverse;
+  }
+}

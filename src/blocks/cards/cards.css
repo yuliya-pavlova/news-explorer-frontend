@@ -28,3 +28,9 @@
     max-width: 688px;
   }
 }
+
+@media (max-width: 671px) {
+  .cards {
+    justify-content: center;
+  }
+}

@@ -1,5 +1,12 @@
 .author__container {
   display: flex;
+  justify-content: center;
   margin: auto;
   max-width: 1120px;
+}
+
+@media (max-width: 620px) {
+  .author__container {
+    flex-wrap: wrap;
+  }
 }

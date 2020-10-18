@@ -21,3 +21,13 @@
     margin-top: 12px;
   }
 }
+
+@media (max-width: 720px) {
+  .cards__title {
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 10px;
+    max-height: 84px;
+    -webkit-line-clamp: 2;
+  }
+}

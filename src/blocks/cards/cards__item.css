@@ -22,3 +22,12 @@
     margin-right: 8px;
   }
 }
+
+@media (max-width: 720px) {
+  .cards__item {
+    max-width: 288px;
+    min-height: 440px;
+    max-height: 446px;
+    margin-bottom: 10px;
+  }
+}

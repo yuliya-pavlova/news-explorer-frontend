@@ -7,3 +7,9 @@
     max-height: 170px;
   }
 }
+
+@media (max-width: 720px) {
+  .cards__text-container {
+
+  }
+}
