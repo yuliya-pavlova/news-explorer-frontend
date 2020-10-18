@@ -6,3 +6,10 @@
   line-height: 24px;
   color: rgba(26, 27, 34, 0.5);
 }
+
+@media (max-width: 1024px) {
+  .articles-info__title  {
+    font-size: 14px;
+    margin-bottom: 0;
+    }
+  }

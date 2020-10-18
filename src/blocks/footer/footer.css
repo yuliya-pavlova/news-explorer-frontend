@@ -10,9 +10,11 @@
   justify-content: space-between;
   width: calc(100% - 80px);
   margin: auto;
+  min-height: 85px;
 }
 
 @media (max-width: 1024px) {
   .footer  {
+    min-height: 70px;
   }
 }

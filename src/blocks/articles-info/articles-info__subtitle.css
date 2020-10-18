@@ -9,3 +9,11 @@
   max-width: 530px;
   margin-bottom: 10px;
 }
+
+@media (max-width: 1024px) {
+  .articles-info__subtitle  {
+    font-size: 30px;
+    line-height: 34px;
+    max-width: 336px;
+    }
+  }

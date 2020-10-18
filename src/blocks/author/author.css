@@ -8,11 +8,11 @@
   background: #FFFFFF;
   max-height: 540px;
   display: flex;
-  margin: 66px 216px 38px 104px;
+  margin: 103px 216px 58px 104px;
 }
 
 @media (max-width: 1024px) {
 .author  {
-  margin: 43px 40px 56px 40px;
+  margin: 24px 40px 29px 40px;
   }
 }

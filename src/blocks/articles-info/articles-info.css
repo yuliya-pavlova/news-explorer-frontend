@@ -10,3 +10,10 @@
   padding-top: 21px;
   padding-left: 96px;
 }
+
+@media (max-width: 1024px) {
+  .articles-info  {
+    padding-top: 13px;
+    padding-left: 41px;
+    }
+  }
