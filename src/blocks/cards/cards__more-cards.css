@@ -1,7 +1,12 @@
 .cards__more-cards {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
   margin-bottom: 30px;
   margin-top: 47px;
+}
+
+@media (max-width: 1024px) {
+  .cards__more-cards {
+    margin-top: 21px;
+  }
 }

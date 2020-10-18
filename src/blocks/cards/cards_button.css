@@ -13,3 +13,9 @@
   outline: none;
   border: none;
 }
+
+@media (max-width: 1024px) {
+  .cards__button {
+    padding: 15px 55px 15px 55px;
+  }
+}

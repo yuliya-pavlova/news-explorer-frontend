@@ -10,3 +10,9 @@
   background-size: cover;
   height: 576px;
 }
+
+@media (max-width: 1024px) {
+  .header {
+    height: 400px;
+  }
+}

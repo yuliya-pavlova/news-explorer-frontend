@@ -6,14 +6,13 @@
 
 .author {
   background: #FFFFFF;
-  height: 540px;
+  max-height: 540px;
   display: flex;
   margin: 66px 216px 38px 104px;
 }
 
-
 @media (max-width: 1024px) {
-  .author  {
-  margin: 40px 40px 72px 40px;
+.author  {
+  margin: 43px 40px 56px 40px;
   }
 }

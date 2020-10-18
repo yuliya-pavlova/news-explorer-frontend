@@ -7,3 +7,10 @@
   color: #FFFFFF;
   margin-bottom: 62px;
 }
+
+@media (max-width: 1024px) {
+  .search__subtitle {
+    margin-bottom: 47px;
+    margin-top: 0;
+  }
+}
