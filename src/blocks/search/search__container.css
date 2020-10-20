@@ -8,3 +8,9 @@
     width: 448px;
   }
 }
+
+@media (max-width: 520px) {
+  .search__container {
+    width: 100%;
+  }
+}

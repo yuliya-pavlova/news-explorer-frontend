@@ -21,3 +21,10 @@
     height: 56px;
   }
 }
+
+@media (max-width: 520px) {
+  .search-form__input {
+    width: 288px;
+    margin: 0 auto;
+  }
+}
