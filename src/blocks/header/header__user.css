@@ -6,5 +6,11 @@
 @media (max-width: 1024px) {
   .header.header__user {
     height: 270px;
-    }
   }
+}
+
+@media (max-width: 520px) {
+  .header.header__user {
+    height: 305px;
+  }
+}

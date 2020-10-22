@@ -22,3 +22,9 @@
     top: -6px
     }
   }
+
+  @media (max-width: 520px) {
+    .cards__keywords  {
+      top: 1px;
+    }
+  }

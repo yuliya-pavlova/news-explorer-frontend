@@ -5,11 +5,8 @@
 @import url('../blocks/main-menu/main-menu.css');
 @import url('../blocks/cards/cards.css');
 @import url('../blocks/footer/footer.css');
+@import url('../blocks/main-page/main-page.css');
 
-.main-page {
-  margin: 0;
-  background: #FFFFFF;
-}
 .element_not-visible {
   display: none;
 }

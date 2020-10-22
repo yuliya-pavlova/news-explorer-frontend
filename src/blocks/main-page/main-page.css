@@ -1,5 +1,7 @@
 @import url(./main-page_blackout.css);
 
 .main-page {
-
+  margin: 0;
+  background: #FFFFFF;
+  min-width: 320px;
 }

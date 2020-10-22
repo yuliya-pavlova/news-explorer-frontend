@@ -5,13 +5,15 @@
   position: relative;
 }
 
-.cards__item:nth-of-type(3n+2) {
-  margin-left: 16px;
-  margin-right: 16px;
+@media (min-width: 1024px) {
+  .cards__item:nth-of-type(3n+2) {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 721px) {
   .cards__item {
     max-width: 224px;
     max-height: 420px;
@@ -29,5 +31,12 @@
     min-height: 440px;
     max-height: 446px;
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cards__item:nth-of-type(2n+1) {
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }

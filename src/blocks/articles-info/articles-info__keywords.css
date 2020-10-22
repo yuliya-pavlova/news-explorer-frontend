@@ -11,5 +11,11 @@
   .articles-info__keywords  {
     font-size: 14px;
     margin-top: 0;
-    }
   }
+}
+
+@media (max-width: 520px) {
+  .articles-info__keywords  {
+    font-size: 18px;
+  }
+}

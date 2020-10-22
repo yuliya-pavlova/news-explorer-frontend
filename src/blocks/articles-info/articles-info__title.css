@@ -13,3 +13,9 @@
     margin-bottom: 0;
     }
   }
+
+  @media (max-width: 520px) {
+    .articles-info__title  {
+      font-size: 12px;
+    }
+  }

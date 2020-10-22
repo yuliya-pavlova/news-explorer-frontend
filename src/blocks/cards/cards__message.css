@@ -26,3 +26,9 @@
     width: 159px;
   }
 }
+
+@media (max-width: 520px) {
+  .cards__message {
+    top: 3px;
+  }
+}
