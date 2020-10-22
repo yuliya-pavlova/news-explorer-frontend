@@ -19,3 +19,9 @@
     padding: 15px 55px 15px 55px;
   }
 }
+
+@media (max-width: 1024px) {
+  .cards__button {
+    padding: 14px 78px 14px 78px;
+  }
+}

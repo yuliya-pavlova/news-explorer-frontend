@@ -16,3 +16,9 @@
     margin-top: 10px;
   }
 }
+
+@media (max-width: 520px) {
+  .search-results__title {
+    margin-bottom: 24px;
+  }
+}

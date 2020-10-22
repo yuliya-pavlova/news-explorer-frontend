@@ -11,6 +11,6 @@
 
 @media (max-width: 520px) {
   .search__container {
-    width: 100%;
+    width: calc(100% - 36px);
   }
 }

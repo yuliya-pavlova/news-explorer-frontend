@@ -10,3 +10,8 @@
     margin-top: 21px;
   }
 }
+@media (max-width: 1024px) {
+  .cards__more-cards {
+    margin-bottom: 0;
+  }
+}

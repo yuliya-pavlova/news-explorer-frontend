@@ -8,3 +8,9 @@
     padding: 33px 40px;
   }
 }
+
+@media (max-width: 520px) {
+  .search-results__container {
+    padding: 29px 17px;
+  }
+}

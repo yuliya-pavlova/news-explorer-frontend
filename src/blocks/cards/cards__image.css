@@ -20,3 +20,9 @@
     margin-bottom: 16px;
   }
 }
+
+@media (max-width: 520px) {
+  .cards__image {
+    margin-bottom: 13px;
+  }
+}

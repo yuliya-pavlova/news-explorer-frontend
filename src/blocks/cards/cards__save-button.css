@@ -19,3 +19,10 @@
     right: 8px;
   }
 }
+
+@media (max-width: 520px) {
+  .cards__save-button {
+    top: 14px;
+    right: 12px;
+  }
+}

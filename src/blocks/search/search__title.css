@@ -18,3 +18,9 @@
     max-width: 385px;
   }
 }
+
+@media (max-width: 720px) {
+  .search__title {
+    margin-top: 32px;
+  }
+}

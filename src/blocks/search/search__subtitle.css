@@ -14,3 +14,9 @@
     margin-top: 0;
   }
 }
+
+@media (max-width: 520px) {
+  .search__subtitle {
+    margin-bottom: 67px;
+  }
+}

@@ -23,5 +23,6 @@
   .footer  {
     min-height: 98px;
     flex-direction: column-reverse;
+    width: calc(100% - 7%);
   }
 }

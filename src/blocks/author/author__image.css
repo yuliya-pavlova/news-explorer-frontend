@@ -15,3 +15,12 @@
     margin-top: 17px;
   }
 }
+@media (max-width: 520px) {
+  .author__image {
+    width: 272px;
+    height: 272px;
+    margin-right: 0;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+}
