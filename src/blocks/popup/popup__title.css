@@ -7,3 +7,9 @@
   color: #1A1B22;
   margin-top: 0;
 }
+
+@media (max-width: 520px) {
+  .popup__title {
+    margin-bottom: 14px;
+  }
+}
