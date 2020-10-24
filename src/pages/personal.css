@@ -1,3 +1,4 @@
+@import url('../vendor/fonts.css');
 @import url('../blocks/header/header.css');
 @import url('../blocks/page/page.css');
 @import url('../blocks/articles-info/articles-info.css');
@@ -10,52 +11,4 @@
 
 .element_not-visible {
   display: none;
-}
-
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style:  normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/robotoslab-regular.woff') format("woff");
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style:  normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../fonts/roboto-regular.woff') format("woff");
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style:  normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url('../fonts/roboto-regular.woff') format("woff");
-}
-
-@font-face {
-  font-family: 'Roboto';
-  font-style:  normal;
-  font-weight: 900;
-  font-display: swap;
-  src: url('../fonts/roboto-medium.woff') format("woff");
-}
-
-@font-face {
-  font-family: 'Source Sans Pro';
-  font-style:  normal;
-  font-weight: normal;
-  font-display: swap;
-  src: url('../fonts/sourcesanspro-regular.woff') format("woff");
-}
-
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style:  normal;
-  font-weight: bold;
-  font-display: swap;
-  src: url('../fonts/robotoslab-regular.woff') format("woff");
 }

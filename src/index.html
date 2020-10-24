@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Главная страница</title>
-  <link rel="stylesheet" href="pages/index.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.index.css %>">
+  <link rel="icon" href="<%=require('./images/favicon.svg').default%>" type="image/x-icon">
 </head>
 
 <body class="main-page">
@@ -55,7 +56,7 @@
                 <button class="cards__save-icon"></button>
               </div>
               <a href="./index.html">
-                <img class="cards__image" src="./images/image_08.png" alt="Растение">
+                <img class="cards__image" src="<%=require('./images/image_08.png')%>" alt="Растение">
               </a>
               <span class="cards__date">2 августа, 2019</span>
               <div class="cards__text-container">
@@ -71,7 +72,7 @@
                 <button class="cards__save-icon cards__save-icon_selected"></button>
               </div>
               <a href="./index.html">
-                <img class="cards__image" src="./images/image_04.png" alt="Растение">
+                <img class="cards__image" src="<%=require('./images/image_04.png')%>" alt="Растение">
               </a>
               <span class="cards__date">2 августа, 2019</span>
               <div class="cards__text-container">
@@ -88,7 +89,7 @@
                 <button class="cards__save-icon"></button>
               </div>
               <a href="./index.html">
-                <img class="cards__image" src="./images/image_07.png" alt="Растение">
+                <img class="cards__image" src="<%=require('./images/image_07.png')%>" alt="Растение">
               </a>
               <span class="cards__date">2 августа, 2019</span>
               <div class="cards__text-container">
@@ -108,7 +109,7 @@
           <p class="circle-preloader__text">Идет поиск новостей...</p>
         </div>
         <div class="search-results__not-found element_not-visible">
-          <img class="not-found__image" src="./images/not-found.png" alt="Лупа">
+          <img class="not-found__image" src="<%=require('./images/not-found.png')%>" alt="Лупа">
           <h3 class="not-found__title">Ничего не найдено</h3>
           <p class="not-found__text">К сожалению по вашему запросу
             ничего не найдено.</p>
@@ -117,7 +118,7 @@
       <section class="author">
         <div class="author__container">
           <picture>
-            <img class="author__image" src="./images/me.png" alt="Фото автора сайта">
+            <img class="author__image" src="<%=require('./images/me.png')%>" alt="Фото автора сайта">
           </picture>
           <div class="author__main-text">
             <h2 class="author__title">Об авторе</h2>
@@ -138,10 +139,10 @@
         </div>
         <div class="footer__item">
           <a class="footer__link" target="_blank" href="https://github.com/yuliya-pavlova">
-            <img class="footer__image" src="./images/gh.png" alt="Ссылка на GitHub">
+            <img class="footer__image" src="<%=require('./images/gh.png')%>" alt="Ссылка на GitHub">
           </a>
           <a class="footer__link" target="_blank" href="https://www.facebook.com/profile.php?id=100001976997039">
-            <img class="footer__image" src="./images/fb.png" alt="Ссылка на Facebook">
+            <img class="footer__image" src="<%=require('./images/fb.png')%>"  alt="Ссылка на Facebook">
           </a>
         </div>
       </div>
@@ -149,7 +150,7 @@
   </div>
   <div class="popup-login">
     <div class="popup-login__content">
-      <img src="./images/close.svg" alt="Иконка крестика" class="popup-login__close">
+      <img src="<%=require('./images/close.svg')%>" alt="Иконка крестика" class="popup-login__close">
       <h3 class="popup-login__title">Вход</h3>
       <form class="popup-login__form" name="formLogin">
         <label class="form__label" for="formLoginEmail">Email</label>
@@ -168,7 +169,7 @@
   </div>
   <div class="popup-registration">
     <div class="popup-registration__content">
-      <img src="./images/close.svg" alt="Иконка крестика" class="popup-registration__close">
+      <img src="<%=require('./images/close.svg')%>" alt="Иконка крестика" class="popup-registration__close">
       <h3 class="popup-registration__title">Регистрация</h3>
       <form class="popup-registration__form" name="formRegistration">
         <label class="form__label" for="formRegistrationEmail">Email</label>
@@ -192,7 +193,7 @@
   </div>
   <div class="popup-info">
     <div class="popup-info__content">
-      <img src="./images/close.svg" alt="Иконка крестика" class="popup-info__close">
+      <img src="<%=require('./images/close.svg')%>" alt="Иконка крестика" class="popup-info__close">
       <h3 class="popup-info__title">Пользователь успешно зарегистрирован!</h3>
       <form class="popup-info__form" name="formRegistrationSuccessful">
         <button class="popup-info__link">Войти</button>

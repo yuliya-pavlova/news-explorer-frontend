@@ -7,103 +7,104 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
-    entry: {
-      main: './src/js/index.js'
-    },
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[chunkhash].js'
-    },
-    module: {
-        rules: [{
-            test: /\.js$/,
-            use: {
-                loader: "babel-loader",
-                options: {
-                    plugins: ['transform-class-properties']
-                }
-            },
-            exclude: /node_modules/
-        },
-        {
-            test: /\.css$/,
-            use: [
-                MiniCssExtractPlugin.loader, {
-                loader:'css-loader',
-                    options: {
-                        importLoaders: 2
-                    }
-                }, 'postcss-loader']
-        },
-        {
-            test: /\.(eot|ttf|woff|woff2)$/,
-            loader: 'file-loader?name=./vendor/[name].[ext]'
-        },
-        {
-            test: /\.(png|jpg|gif|ico|svg)$/,
-            use: [
-                {
-                    loader: 'file-loader',
-                    options: {
-                        name: './images/[name].[ext]',
-                        esModule: false
-                    },
-                },
-                {
-                    loader: 'image-webpack-loader',
-                    options: {
-                        bypassOnDebug: true,
-                        disable: true,
-                        mozjpeg: {
-                            progressive: true,
-                            quality: 65
-                        },
-                        optipng: {
-                            enabled: false,
-                        },
-                        pngquant: {
-                            quality: [0.65, 0.90],
-                            speed: 4
-                        },
-                        gifsicle: {
-                            interlaced: false,
-                        },
-                        webp: {
-                            quality: 75
-                        }
-                    }
-                },
-            ]
+  entry: {
+    main: './src/js/index.js',
+    personal: './src/js/personal.js',
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: './[name]/[name].[chunkhash].js',
+  },
+  module: {
+    rules: [{
+      test: /\.js$/,
+      use: {
+        loader: "babel-loader",
+        options: {
+          plugins: ['transform-class-properties']
         }
-        ]
+      },
+      exclude: /node_modules/
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: 'style.[contenthash].css'
-        }),
-        new HtmlWebpackPlugin({
-            inject: false,
-            hash: true,
-            template: './src/index.html',
-            filename: 'index.html'
-        }),
-        new HtmlWebpackPlugin({
-          inject: false,
-          hash: true,
-          template: './src/personal.html',
-          filename: 'personal.html',
-        }),
-        new OptimizeCssAssetsPlugin({
-          assetNameRegExp: /\.css$/g,
-          cssProcessor: require('cssnano'),
-          cssProcessorPluginOptions: {
-                  preset: ['default'],
+    {
+      test: /\.css$/i,
+      use: [
+        MiniCssExtractPlugin.loader, {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 2
+          }
+        }, 'postcss-loader']
+    },
+    {
+      test: /\.(eot|ttf|woff|woff2)$/,
+      loader: 'file-loader?name=./vendor/[name].[ext]'
+    },
+    {
+      test: /\.(png|jpg|gif|ico|svg)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: './images/[name].[ext]',
+            esModule: false
           },
-          canPrint: true
-        }),
-        new webpack.DefinePlugin({
-            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-        }),
-        new WebpackMd5Hash()
+        },
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            bypassOnDebug: true,
+            disable: true,
+            mozjpeg: {
+              progressive: true,
+              quality: 65
+            },
+            optipng: {
+              enabled: false,
+            },
+            pngquant: {
+              quality: [0.65, 0.90],
+              speed: 4
+            },
+            gifsicle: {
+              interlaced: false,
+            },
+            webp: {
+              quality: 75
+            }
+          }
+        },
+      ]
+    }
     ]
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name]/[name].[contenthash].css',
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      template: './src/index.html',
+      filename: 'index.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      template: './src/personal.html',
+      filename: 'personal/personal.html',
+    }),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default'],
+      },
+      canPrint: true
+    }),
+    new webpack.DefinePlugin({
+      'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    new WebpackMd5Hash()
+  ]
 };

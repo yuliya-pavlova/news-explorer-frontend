@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сохраненные статьи</title>
-  <link rel="stylesheet" href="pages/personal.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.personal.css %>">
+  <link rel="icon" href="<%=require('./images/favicon.svg').default%>" type="image/x-icon">
 </head>
 
 <body class="main-page">
@@ -50,7 +51,7 @@
                 <button class="cards__delete-icon"></button>
               </div>
               <a href="./personal.html">
-                <img class="cards__image" src="./images/1.png" alt="Зеленое растение">
+                <img class="cards__image" src="<%=require('./images/1.png')%>" alt="Зеленое растение">
               </a>
               <span class="cards__date">2 августа, 2019</span>
               <div class="cards__text-container">
@@ -69,7 +70,7 @@
                 <button class="cards__delete-icon cards__delete-icon_selected"></button>
               </div>
               <a href="./personal.html">
-                <img class="cards__image" src="./images/2.png" alt="Снимок поля с высоты птичьего полета">
+                <img class="cards__image" src="<%=require('./images/2.png')%>" alt="Снимок поля с высоты птичьего полета">
               </a>
               <span class="cards__date">2 августа, 2019</span>
               <div class="cards__text-container">
@@ -86,7 +87,7 @@
                 <button class="cards__delete-icon"></button>
               </div>
               <a href="./personal.html">
-                <img class="cards__image" src="./images/3.png" alt="Цветок в вазе">
+                <img class="cards__image" src="<%=require('./images/3.png')%>" alt="Цветок в вазе">
               </a>
               <span class="cards__date">2 августа, 2019</span>
               <div class="cards__text-container">
@@ -102,7 +103,7 @@
                 <button class="cards__delete-icon"></button>
               </div>
               <a href="./personal.html">
-                <img class="cards__image" src="./images/1.png" alt="Зеленое растение">
+                <img class="cards__image" src="<%=require('./images/1.png')%>" alt="Зеленое растение">
               </a>
               <span class="cards__date">2 августа, 2019</span>
               <div class="cards__text-container">
@@ -119,7 +120,7 @@
                 <button class="cards__delete-icon"></button>
               </div>
               <a href="./personal.html">
-                <img class="cards__image" src="./images/2.png" alt="Снимок поля с высоты птичьего полета">
+                <img class="cards__image" src="<%=require('./images/2.png')%>" alt="Снимок поля с высоты птичьего полета">
               </a>
               <span class="cards__date">2 августа, 2019</span>
               <div class="cards__text-container">
@@ -137,7 +138,7 @@
           <p class="circle-preloader__text">Идет поиск новостей...</p>
         </div>
         <div class="search-results__not-found element_not-visible">
-          <img class="not-found__image" src="./images/not-found.png" alt="Лупа">
+          <img class="not-found__image" src="<%=require('./images/not-found.png')%>" alt="Лупа">
           <h3 class="not-found__title">Вы еще не сохранили ни одной статьи</h3>
         </div>
       </section>
@@ -151,10 +152,10 @@
         </div>
         <div class="footer__item">
           <a class="footer__link" target="_blank" href="https://github.com/yuliya-pavlova">
-            <img class="footer__image" src="./images/gh.png" alt="Ссылка на GitHub">
+            <img class="footer__image" src="<%=require('./images/gh.png')%>" alt="Ссылка на GitHub">
           </a>
           <a class="footer__link" target="_blank" href="https://www.facebook.com/profile.php?id=100001976997039">
-            <img class="footer__image" src="./images/fb.png" alt="Ссылка на Facebook">
+            <img class="footer__image" src="<%=require('./images/fb.png')%>" alt="Ссылка на Facebook">
           </a>
         </div>
       </div>
