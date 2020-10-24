@@ -10,7 +10,9 @@
 @import url(./main-menu__container_black.css);
 @import url(./main-menu__button-close.css);
 @import url(./main-menu__button-open.css);
-@import url(./main-menu__list_mobile.css);
 @import url(./main-menu_black.css);
 @import url(./main-menu__button-close-black.css);
 @import url(./main-menu__button-open-black.css);
+@import url(./main-menu__list_mobile.css);
+@import url(./main-menu__button-close_is-opened.css);
+@import url(./main-menu__button-open_is-closed.css);

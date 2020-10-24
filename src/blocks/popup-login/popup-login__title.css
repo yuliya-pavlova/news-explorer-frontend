@@ -1,0 +1,15 @@
+.popup-login_title {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  color: #1A1B22;
+  margin-top: 0;
+}
+
+@media (max-width: 520px) {
+  .popup-login__title {
+    margin-bottom: 14px;
+  }
+}

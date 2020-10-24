@@ -11,6 +11,7 @@
   width: calc(100% - 80px);
   margin: auto;
   min-height: 85px;
+  background: #FFFFFF;
 }
 
 @media (max-width: 1024px) {

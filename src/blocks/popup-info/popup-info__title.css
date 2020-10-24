@@ -1,4 +1,4 @@
-.popup__title {
+.popup-info__title {
   font-family: Roboto;
   font-style: normal;
   font-weight: 900;
@@ -9,7 +9,7 @@
 }
 
 @media (max-width: 520px) {
-  .popup__title {
+  .popup-info__title {
     margin-bottom: 14px;
   }
 }

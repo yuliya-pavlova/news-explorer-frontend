@@ -1,4 +1,4 @@
-.popup__close {
+.popup-info__close {
   width: 40px;
   position: absolute;
   top: -45px;
@@ -7,7 +7,7 @@
 }
 
 @media (max-width: 720px) {
-  .popup__close {
+  .popup-info__close {
     top: -43px;
     right: 18px;
     width: 23px;

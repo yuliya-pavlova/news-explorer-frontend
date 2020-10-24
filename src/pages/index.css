@@ -9,7 +9,9 @@
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/circle-preloader/circle-preloader.css');
 @import url('../blocks/not-found/not-found.css');
-@import url('../blocks/popup/popup.css');
+@import url('../blocks/popup-login/popup-login.css');
+@import url('../blocks/popup-info/popup-info.css');
+@import url('../blocks/popup-registration/popup-registration.css');
 @import url('../blocks/form/form.css');
 @import url('../blocks/main-page/main-page.css');
 
