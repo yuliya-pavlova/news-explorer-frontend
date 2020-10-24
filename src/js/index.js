@@ -19,8 +19,9 @@
     const openMobileMenu = document.querySelector('.main-menu__button-open');
     const closeMobileMenu = document.querySelector('.main-menu__button-close');
 
-
     const mainPage = document.querySelector('.main-page');
+
+    const overlay = document.querySelector('.overlay');
 
     openPopupLogin.addEventListener('click', () => {
       popupLogin.classList.add('popup-login_is-opened');
@@ -52,16 +53,18 @@
     openMobileMenu.addEventListener('click', () => {
       mainMenu.classList.add('main-menu_black');
       mainMenuList.classList.add('main-menu__list_mobile');
+      mainMenuList.classList.add('main-menu__list_mobile-black');
       openMobileMenu.classList.add('main-menu__button-open_is-closed');
       closeMobileMenu.classList.add('main-menu__button-close_is-opened');
-      mainPage.classList.add('main-page_blackout');
+      overlay.classList.add('overlay_is-opened');
     });
     closeMobileMenu.addEventListener('click', () => {
       mainMenu.classList.remove('main-menu_black');
-      mainPage.classList.remove('main-page_blackout');
       mainMenuList.classList.remove('main-menu__list_mobile');
+      mainMenuList.classList.remove('main-menu__list_mobile-black');
       openMobileMenu.classList.remove('main-menu__button-open_is-closed');
       closeMobileMenu.classList.remove('main-menu__button-close_is-opened');
+      overlay.classList.remove('overlay_is-opened');
     });
   };
 })();

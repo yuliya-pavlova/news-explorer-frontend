@@ -6,6 +6,7 @@
 @import url('../blocks/cards/cards.css');
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/main-page/main-page.css');
+@import url('../blocks/overlay/overlay.css');
 
 .element_not-visible {
   display: none;

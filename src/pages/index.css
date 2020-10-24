@@ -14,6 +14,7 @@
 @import url('../blocks/popup-registration/popup-registration.css');
 @import url('../blocks/form/form.css');
 @import url('../blocks/main-page/main-page.css');
+@import url('../blocks/overlay/overlay.css');
 
 .element_not-visible {
   display: none;

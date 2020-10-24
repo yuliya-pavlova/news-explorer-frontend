@@ -9,6 +9,7 @@
   background: url(../../images/search.png) no-repeat 50%;
   background-size: cover;
   height: 576px;
+  z-index: 10;
 }
 
 @media (max-width: 1024px) {

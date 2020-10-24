@@ -1,4 +1,4 @@
-.main-menu__list.main-menu__list_mobile {
+.main-menu__list_mobile {
   padding: 16px 16px 24px;
   visibility: visible;
   align-items: flex-start;
@@ -12,7 +12,6 @@
   top: 57px;
   left: 0;
   opacity: 1;
-  background-color: #1A1B22;
   z-index: 10;
-  display: flex;
+  display: none;
 }
