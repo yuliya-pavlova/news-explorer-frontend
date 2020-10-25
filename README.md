@@ -10,7 +10,7 @@
 - Разместить production-билд на github pages - `npm run deploy`
 
 ## Ссылка на github pages:
-https://yuliya-pavlova.github.io/cousteau/
+https://yuliya-pavlova.github.io/news-explorer-frontend
  
 Используемые технологии:  
 * Инфраструктура Git, Webpack 
