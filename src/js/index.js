@@ -1,3 +1,5 @@
+import '../pages/index.css';
+
 (function() {
   window.onload = function() {
     const popupLogin = document.querySelector('.popup-login');

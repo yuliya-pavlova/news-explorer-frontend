@@ -1,3 +1,5 @@
+import '../pages/personal.css';
+
 (function() {
   window.onload = function() {
     const mainMenu = document.querySelector('.main-menu');

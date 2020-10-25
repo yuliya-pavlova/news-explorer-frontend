@@ -79,9 +79,17 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({
+    new MiniCssExtractPlugin({ //
       filename: '[name]/[name].[contenthash].css',
     }),
+	new OptimizeCssAssetsPlugin({
+     assetNameRegExp: /\.css$/g,
+     cssProcessor: require('cssnano'),
+     cssProcessorPluginOptions: {
+             preset: ['default'],
+     },
+     canPrint: true
+	}),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
@@ -93,14 +101,6 @@ module.exports = {
       hash: true,
       template: './src/personal.html',
       filename: 'personal/personal.html',
-    }),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: require('cssnano'),
-      cssProcessorPluginOptions: {
-        preset: ['default'],
-      },
-      canPrint: true
     }),
     new webpack.DefinePlugin({
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
