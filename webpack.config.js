@@ -96,12 +96,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
+      hash: true,
       template: './src/main.html',
       filename: 'index.html',
       chunks: ["main"]
     }),
     new HtmlWebpackPlugin({
       inject: false,
+      hash: true,
       template: './src/personal.html',
       filename: 'personal.html',
       chunks: ["personal"]

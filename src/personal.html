@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Сохраненные статьи</title>
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
-  <link rel="icon" href="<%=require('./images/favicon.svg').default%>" type="image/x-icon">
+  <link rel="icon" href="<%=require('./images/favicon.svg')%>" type="image/x-icon">
 </head>
 
 <body class="main-page">
@@ -30,7 +30,7 @@
             </div>
           </div>
           <button class="main-menu__button-open-black"></button>
-          <button class="main-menu__button-close-black element_not-visible"></button>
+          <button class="main-menu__button-close-black"></button>
         </div>
       </nav>
       <section class="articles-info">
@@ -64,7 +64,7 @@
             </div>
             <div class="cards__item">
               <p class="cards__keywords">Природа</p>
-              <p class="cards__message">Убрать из сохраненных</p>
+              <p class="cards__message element_not-visible">Убрать из сохраненных</p>
               <div class="cards__save-button">
 
                 <button class="cards__delete-icon cards__delete-icon_selected"></button>

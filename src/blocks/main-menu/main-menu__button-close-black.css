@@ -11,9 +11,3 @@
   height: 24px;
   z-index: 1;
 }
-
-@media (max-width: 720px) {
-  .main-menu__button-close-black {
-    display: block;
-  }
-}
