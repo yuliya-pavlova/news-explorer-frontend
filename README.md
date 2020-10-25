@@ -11,6 +11,7 @@
 
 ## Ссылка на github pages:
 https://yuliya-pavlova.github.io/news-explorer-frontend
+https://yuliya-pavlova.github.io/news-explorer-frontend/personal.html
  
 Используемые технологии:  
 * Инфраструктура Git, Webpack 
