@@ -3,6 +3,7 @@
   max-height: 576px;
   margin-bottom: 16px;
   position: relative;
+  background-color: #FFFFFF;
 }
 
 @media (min-width: 1440px) {
