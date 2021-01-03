@@ -1,0 +1,13 @@
+.main-menu__button-close-black {
+  display: none;
+  background: none;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  background-image: url(../../images/back-black.svg);
+  width: 24px;
+  height: 24px;
+  z-index: 1;
+}

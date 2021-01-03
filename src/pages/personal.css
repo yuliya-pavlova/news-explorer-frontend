@@ -1,0 +1,14 @@
+@import url('../vendor/fonts.css');
+@import url('../blocks/header/header.css');
+@import url('../blocks/page/page.css');
+@import url('../blocks/articles-info/articles-info.css');
+@import url('../blocks/search-results/search-results.css');
+@import url('../blocks/main-menu/main-menu.css');
+@import url('../blocks/cards/cards.css');
+@import url('../blocks/footer/footer.css');
+@import url('../blocks/main-page/main-page.css');
+@import url('../blocks/overlay/overlay.css');
+
+.element_not-visible {
+  display: none;
+}

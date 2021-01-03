@@ -1,0 +1,27 @@
+@import url(./main-menu__container.css);
+@import url(./main-menu__list.css);
+@import url(./main-menu__button.css);
+@import url(./main-menu__link.css);
+@import url(./main-menu__link_bold.css);
+@import url(./main-menu__link_selected-black.css);
+@import url(./main-menu__link_selected-white.css);
+@import url(./main-menu__link_gray-color.css);
+@import url(./main-menu__button-logout.css);
+@import url(./main-menu__container_black.css);
+@import url(./main-menu__button-close.css);
+@import url(./main-menu__button-open.css);
+@import url(./main-menu_black.css);
+@import url(./main-menu_white.css);
+@import url(./main-menu__button-close-black.css);
+@import url(./main-menu__button-open-black.css);
+@import url(./main-menu__list_mobile.css);
+@import url(./main-menu__button-close_is-opened.css);
+@import url(./main-menu__button-open_is-closed.css);
+@import url(./main-menu__container_white.css);
+@import url(./main-menu__list_mobile-black.css);
+@import url(./main-menu__list_mobile-white.css);
+
+.main-menu {
+  position: relative;
+  z-index: 10;
+}

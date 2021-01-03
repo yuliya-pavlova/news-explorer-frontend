@@ -1,0 +1,7 @@
+@import url(./main-page_overflow-hidden.css);
+
+.main-page {
+  margin: 0;
+  background: #FFFFFF;
+  min-width: 320px;
+}

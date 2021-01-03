@@ -1,0 +1,25 @@
+@import url('./header__nav.css');
+@import url('./header__link.css');
+@import url('./header_white.css');
+@import url('./header_black.css');
+@import url('./header__user.css');
+
+.header {
+  font-family: 'Inter', 'Helvetica', 'Arial', 'sans-serif';
+  background: url(../../images/search.png) no-repeat 50%;
+  background-size: cover;
+  height: 576px;
+  z-index: 10;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    height: 400px;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    height: 534px;
+  }
+}

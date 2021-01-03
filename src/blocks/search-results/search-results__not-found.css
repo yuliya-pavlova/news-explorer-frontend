@@ -1,0 +1,13 @@
+.search-results__not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 374px;
+}
+
+@media (max-width: 1024px) {
+  .search-results__not-found {
+    min-height: 300px;
+  }
+}

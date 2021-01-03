@@ -1,0 +1,36 @@
+@import url('./cards__date.css');
+@import url('./cards__description.css');
+@import url('./cards__image.css');
+@import url('./cards__item.css');
+@import url('./cards__source.css');
+@import url('./cards__title.css');
+@import url('./cards_button.css');
+@import url('./cards__more-cards.css');
+@import url('./cards__text-container.css');
+@import url('./cards__save-icon.css');
+@import url('./cards__save-button.css');
+@import url('./cards__save-icon_selected.css');
+@import url('./cards__message.css');
+@import url('./cards__delete-icon.css');
+@import url('./cards__delete-icon_selected.css');
+@import url('./cards__keywords.css');
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  max-width: 1232px;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .cards {
+    max-width: 688px;
+  }
+}
+
+@media (max-width: 671px) {
+  .cards {
+    justify-content: center;
+  }
+}

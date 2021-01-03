@@ -1,0 +1,9 @@
+.main-menu__link_selected-white {
+  border-bottom: 2px solid #fff;
+}
+
+@media (max-width: 720px) {
+  .main-menu__link_selected-white  {
+    border-bottom: none;
+  }
+}

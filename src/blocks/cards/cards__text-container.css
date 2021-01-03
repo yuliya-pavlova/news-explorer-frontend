@@ -1,0 +1,15 @@
+.cards__text-container {
+  max-height: 186px;
+}
+
+@media (max-width: 1024px) {
+  .cards__text-container {
+    max-height: 170px;
+  }
+}
+
+@media (max-width: 720px) {
+  .cards__text-container {
+
+  }
+}
