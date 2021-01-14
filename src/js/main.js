@@ -1,5 +1,16 @@
 import '../pages/main.css';
 
+const isDev = process.env.NODE_ENV === 'development';
+const baseUrl = isDev ? 'http://localhost:3000' : 'https://api.news-explorer.space';
+const newsUrl = isDev
+  ? 'https://newsapi.org/v2/everything'
+  : `https://nomoreparties.co/news/v2/top-headlines`;
+
+const newsApi = new NewsApi({
+  baseUrl: newsUrl,
+  apiKey: '0f45b37c67a34232a80824e74e6d0211',
+});
+
 (function() {
   window.onload = function() {
     const popupLogin = document.querySelector('.popup-login');
