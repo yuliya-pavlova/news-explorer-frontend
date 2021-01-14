@@ -1,21 +1,39 @@
 import '../pages/main.css';
+import LoginForm from './LoginForm';
+import Popup from './Popup';
+import Api from './Api';
 
 const isDev = process.env.NODE_ENV === 'development';
-const baseUrl = isDev ? 'http://localhost:3000' : 'https://api.news-explorer.space';
-const newsUrl = isDev
-  ? 'https://newsapi.org/v2/everything'
-  : `https://nomoreparties.co/news/v2/top-headlines`;
+// const baseUrl = isDev ? 'http://localhost:3000' : 'https://api.news-explorer.space';
+// const newsUrl = isDev
+//   ? 'https://newsapi.org/v2/everything'
+//   : `https://nomoreparties.co/news/v2/top-headlines`;
 
-const newsApi = new NewsApi({
-  baseUrl: newsUrl,
-  apiKey: '0f45b37c67a34232a80824e74e6d0211',
-});
+// const newsApi = new NewsApi({
+//   baseUrl: newsUrl,
+//   apiKey: '0f45b37c67a34232a80824e74e6d0211',
+// });
+
+const popupLogin = document.querySelector('.popup-login');
+const openPopupLogin = document.querySelector('.main-menu__button-login');
+console.log("test");
 
 (function() {
   window.onload = function() {
+    const config = {
+      url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000/',
+      headers: {
+          'Content-Type': 'application/json',
+          credentials: 'include',
+      }
+    }
+    const api = new Api(config);
+
+
     const popupLogin = document.querySelector('.popup-login');
-    const openPopupLogin = document.querySelector('.main-menu__button');
+    const openPopupLogin = document.querySelector('.main-menu__button-login');
     const closeButtonLogin = document.querySelector('.popup-login__close');
+    const openingClassPopup = 'popup-login_is-opened';
 
     const linkRegistration = document.querySelector('.popup-login__link');
     const linkLogin = document.querySelector('.popup-registration__link');
@@ -36,9 +54,10 @@ const newsApi = new NewsApi({
 
     const overlay = document.querySelector('.overlay');
 
-    openPopupLogin.addEventListener('click', () => {
-      popupLogin.classList.add('popup-login_is-opened');
-    });
+    // const signInPopup = new Popup(popupLogin, openingClassPopup);
+    // const loginForm = new LoginForm(popupLogin, signInPopup, api);
+
+
     closeButtonLogin.addEventListener('click', () => {
       popupLogin.classList.remove('popup-login_is-opened');
     });
@@ -81,3 +100,8 @@ const newsApi = new NewsApi({
     });
   };
 })();
+
+openPopupLogin.addEventListener('click', () => {
+  console.log("test");
+  popupLogin.classList.add('popup-login_is-opened');
+});
