@@ -1,7 +1,7 @@
+import { Api } from './api/Api';
+import LoginForm from './components/LoginForm';
+import Popup from './components/Popup';
 import '../pages/main.css';
-import LoginForm from './LoginForm';
-import Popup from './Popup';
-import Api from './Api';
 
 const isDev = process.env.NODE_ENV === 'development';
 // const baseUrl = isDev ? 'http://localhost:3000' : 'https://api.news-explorer.space';
@@ -14,21 +14,17 @@ const isDev = process.env.NODE_ENV === 'development';
 //   apiKey: '0f45b37c67a34232a80824e74e6d0211',
 // });
 
-const popupLogin = document.querySelector('.popup-login');
-const openPopupLogin = document.querySelector('.main-menu__button-login');
-console.log("test");
+// const config = {
+//   url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000/',
+//   headers: {
+//       'Content-Type': 'application/json',
+//       credentials: 'include',
+//   }
+// }
+// const api = new Api(config);
 
 (function() {
   window.onload = function() {
-    const config = {
-      url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000/',
-      headers: {
-          'Content-Type': 'application/json',
-          credentials: 'include',
-      }
-    }
-    const api = new Api(config);
-
 
     const popupLogin = document.querySelector('.popup-login');
     const openPopupLogin = document.querySelector('.main-menu__button-login');
@@ -57,6 +53,9 @@ console.log("test");
     // const signInPopup = new Popup(popupLogin, openingClassPopup);
     // const loginForm = new LoginForm(popupLogin, signInPopup, api);
 
+    openPopupLogin.addEventListener('click', () => {
+      popupLogin.classList.add('popup-login_is-opened');
+    });
 
     closeButtonLogin.addEventListener('click', () => {
       popupLogin.classList.remove('popup-login_is-opened');
@@ -100,8 +99,3 @@ console.log("test");
     });
   };
 })();
-
-openPopupLogin.addEventListener('click', () => {
-  console.log("test");
-  popupLogin.classList.add('popup-login_is-opened');
-});

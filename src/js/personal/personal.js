@@ -1,4 +1,4 @@
-import '../pages/personal.css';
+import '../../pages/personal.css';
 
 (function() {
   window.onload = function() {
