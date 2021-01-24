@@ -7,7 +7,7 @@
   <meta name="author" content="Чечульникова Юлия">
   <meta name="description" content="Поиск новостей">
   <title>Сохраненные статьи</title>
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.personal.css %>">
   <link rel="icon" href="<%=require('./images/favicon.svg')%>" type="image/x-icon">
 </head>
 
@@ -164,7 +164,7 @@
     </footer>
   </div>
   <div class="overlay"></div>
-  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.personal.entry %>"></script>
 </body>
 
 </html>

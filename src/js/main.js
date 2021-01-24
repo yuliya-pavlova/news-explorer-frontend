@@ -19,18 +19,20 @@ import {
   closeMobileMenu,
   overlay,
  } from './constants/constantsDom';
-import { Api } from './api/Api.js';
+import { MainApi } from './api/MainApi';
 import '../pages/main.css';
+
+console.log('Hi!');
 
 const config = {
   url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000/',
   headers: {
       'Content-Type': 'application/json',
-      credentials: 'include',
   }
 }
 
-const api = new Api(config);
+const api = new MainApi(config);
+console.log(api);
 
 //popups
 const loginPopup = new Popup(popupLogin, popupLoginList.openedClassPopup);
