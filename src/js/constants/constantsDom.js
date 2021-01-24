@@ -5,7 +5,6 @@ const closeMobileMenu = document.querySelector('.main-menu__button-close');
 
 const overlay = document.querySelector('.overlay');
 
-
 // popupLogin
 const popupLogin = document.querySelector('.popup-login');
 const openPopupLogin = document.querySelector('.main-menu__button-login');

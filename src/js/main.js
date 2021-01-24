@@ -1,5 +1,4 @@
-// import { Api } from './api/Api';
-// import LoginForm from './components/LoginForm';
+import LoginForm from './components/LoginForm';
 import Popup from './components/Popup';
 import { popupInfoList, popupLoginList, popupSignupList } from './constants/constants';
 import {
@@ -20,14 +19,28 @@ import {
   closeMobileMenu,
   overlay,
  } from './constants/constantsDom';
+import { Api } from './api/Api.js';
 import '../pages/main.css';
 
+const config = {
+  url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000/',
+  headers: {
+      'Content-Type': 'application/json',
+      credentials: 'include',
+  }
+}
 
+const api = new Api(config);
+
+//popups
 const loginPopup = new Popup(popupLogin, popupLoginList.openedClassPopup);
 const signUpPopup = new Popup(popupSignUp, popupSignupList.openedClassPopup);
 const infoPopup = new Popup(popupInfo, popupInfoList.openedClassPopup);
 
-// const loginForm = new LoginForm(popupLogin, signInPopup, api);
+//forms
+const formLogin = document.querySelector('.popup-login__form');
+const loginForm = new LoginForm(formLogin, loginPopup, api);
+console.log('Форма',loginForm);
 
 openPopupLogin.addEventListener('click', () => {
   loginPopup.open.call(loginPopup);
@@ -37,7 +50,7 @@ closeButtonLogin.addEventListener('click', () => {
   loginPopup.close.call(loginPopup);
 });
 
-linkToRegistration.addEventListener('click', () => {
+linkToRegistration.addEventListener('click', (event) => {
   loginPopup.close.call(loginPopup);
   event.preventDefault();
   signUpPopup.open.call(signUpPopup);
@@ -47,7 +60,7 @@ closeButtonSignUp.addEventListener('click', () => {
   signUpPopup.close.call(signUpPopup);
 });
 
-linkToLogin.addEventListener('click', () => {
+linkToLogin.addEventListener('click', (event) => {
   signUpPopup.close.call(loginPopup);
   event.preventDefault();
   loginPopup.open.call(loginPopup);
@@ -79,3 +92,23 @@ closeMobileMenu.addEventListener('click', () => {
   closeMobileMenu.classList.remove('main-menu__button-close_is-opened');
   overlay.classList.remove('overlay_is-opened');
 });
+
+// function login() {
+//   const data = {
+//     email: loginForm.elements.email.value,
+//     password: loginForm.elements.password.value,
+//   };
+//   api.signin(data.email, data.password)
+//   .then(() => {
+//     loginPopup.close();
+//   })
+//   .catch(err => {
+//     console.log(err.message);
+//   });
+// }
+
+// loginForm.addEventListener('submit', (event) => {
+//   console.log(loginForm);
+//   event.preventDefault();
+//   login();
+// });
