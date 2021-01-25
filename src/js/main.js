@@ -1,4 +1,5 @@
 import LoginForm from './components/LoginForm';
+import RegistrationForm from './components/RegistrationForm';
 import Popup from './components/Popup';
 import { popupInfoList, popupLoginList, popupSignupList } from './constants/constants';
 import {
@@ -25,14 +26,14 @@ import '../pages/main.css';
 console.log('Hi!');
 
 const config = {
-  url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000/',
+  url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000',
   headers: {
       'Content-Type': 'application/json',
+      credentials: 'include',
   }
 }
 
 const api = new MainApi(config);
-console.log(api);
 
 //popups
 const loginPopup = new Popup(popupLogin, popupLoginList.openedClassPopup);
@@ -42,7 +43,12 @@ const infoPopup = new Popup(popupInfo, popupInfoList.openedClassPopup);
 //forms
 const formLogin = document.querySelector('.popup-login__form');
 const loginForm = new LoginForm(formLogin, loginPopup, api);
-console.log('Форма',loginForm);
+
+const formRegistration = document.querySelector('.popup-registration__form');
+console.log(formRegistration);
+const registrationForm = new RegistrationForm(formRegistration, signUpPopup, api);
+
+console.log(registrationForm);
 
 openPopupLogin.addEventListener('click', () => {
   loginPopup.open.call(loginPopup);

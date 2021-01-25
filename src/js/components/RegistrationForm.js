@@ -1,4 +1,4 @@
-export default class LoginForm {
+export default class RegistrationForm {
   constructor(form, popup, api) {
       this.formProfile = form;
       this.popup = popup;
@@ -6,9 +6,9 @@ export default class LoginForm {
       this._setEventListeners();
   }
 
-  _signIn = () => {
+  _signUp = () => {
     event.preventDefault();
-    this.api.signin(this.formProfile.elements.email.value, this.formProfile.elements.password.value)
+    this.api.signup(this.formProfile.elements.name.value, this.formProfile.elements.email.value, this.formProfile.elements.password.value)
         .then(res => {
             this.popup.close.call(this.popup);
         })
@@ -19,7 +19,7 @@ export default class LoginForm {
 
   _setEventListeners = () => {
       this.formProfile.addEventListener('submit', (event) => {
-        this._signIn();
+        this._signUp();
       });
   }
 }

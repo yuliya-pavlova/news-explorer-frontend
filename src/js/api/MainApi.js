@@ -4,53 +4,40 @@ export class MainApi {
       this.headers = config.headers;
   }
 
-  _getResponseData(res) {
-    if (!res.ok) {
-        return Promise.reject(`Ошибка: ${res.status}`);
-    }
-    return res.json();
-}
-
   signin(email, password) {
-    console.log('Test');
+    return fetch(`${this.url}/signin`, {
+      method: 'POST',
+      headers: this.headers,
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      })
+    })
+    .then(res => {
+      let json = res.json();
+      if (res.ok) {
+        return json;
+      }
+      return json.then(err => { throw err; });
+    });
   }
 
-  // signin(email, password) {
-  //   return fetch(`${this.url}/signin`, {
-  //     method: 'POST',
-  //     headers: this.headers,
-  //     credentials: 'include',
-  //     body: JSON.stringify({
-  //       email: email,
-  //       password: password,
-  //     })
-  //   })
-  //   .then(res => {
-  //     let json = res.json();
-  //     if (res.ok) {
-  //       return json;
-  //     }
-  //     return json.then(err => { throw err; });
-  //   })
-  // }
-
-// signin(email, password) {
-//   return fetch(`${this._url}/signin`, {
-//     method: 'POST',
-//     headers: this._headers,
-//     credentials: 'include',
-//     body: JSON.stringify({
-//       email: email,
-//       password: password,
-//     })
-//   })
-//   .then(res => {
-//     let json = res.json();
-//     if (res.ok) {
-//       return json;
-//     }
-//     return json.then(err => { throw err; });
-//   })
-// }
-
+  signup(name, email, password ) {
+    return fetch(`${this.url}/signup`, {
+      method: 'POST',
+      headers: this._headers,
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password,
+      })
+    })
+    .then(res => {
+      let json = res.json();
+      if (res.ok) {
+        return json;
+      }
+      return json.then(err => { throw err; });
+    })
+  }
 }
