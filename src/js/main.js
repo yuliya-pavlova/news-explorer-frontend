@@ -21,9 +21,8 @@ import {
   overlay,
  } from './constants/constantsDom';
 import { MainApi } from './api/MainApi';
+import FormValidator from './components/FormValidator';
 import '../pages/main.css';
-
-console.log('Hi!');
 
 const config = {
   url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000',
@@ -45,10 +44,9 @@ const formLogin = document.querySelector('.popup-login__form');
 const loginForm = new LoginForm(formLogin, loginPopup, api);
 
 const formRegistration = document.querySelector('.popup-registration__form');
-console.log(formRegistration);
 const registrationForm = new RegistrationForm(formRegistration, signUpPopup, api);
-
-console.log(registrationForm);
+new FormValidator(formLogin);
+new FormValidator(formRegistration);
 
 openPopupLogin.addEventListener('click', () => {
   loginPopup.open.call(loginPopup);

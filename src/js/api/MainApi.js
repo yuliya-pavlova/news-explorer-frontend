@@ -25,7 +25,7 @@ export class MainApi {
   signup(name, email, password ) {
     return fetch(`${this.url}/signup`, {
       method: 'POST',
-      headers: this._headers,
+      headers: this.headers,
       body: JSON.stringify({
         name: name,
         email: email,
