@@ -13,7 +13,7 @@ export default class LoginForm {
             this.popup.close.call(this.popup);
         })
         .catch((err) => {
-            console.log(err);
+          this.formProfile.querySelector('#server-error').textContent = err.message;
         });
   }
 

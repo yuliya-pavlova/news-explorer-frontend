@@ -1,8 +1,9 @@
 export default class RegistrationForm {
-  constructor(form, popup, api) {
+  constructor(form, popup, api, error) {
       this.formProfile = form;
       this.popup = popup;
       this.api = api;
+      this.error = error;
       this._setEventListeners();
   }
 
@@ -13,7 +14,7 @@ export default class RegistrationForm {
             this.popup.close.call(this.popup);
         })
         .catch((err) => {
-            console.log(err);
+          this.formProfile.querySelector('#server-error').textContent = err.message;
         });
   }
 

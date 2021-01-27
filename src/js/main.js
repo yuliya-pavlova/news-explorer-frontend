@@ -49,6 +49,7 @@ const loginForm = new LoginForm(formLogin, loginPopup, api);
 
 const formRegistration = document.querySelector('.popup-registration__form');
 const registrationForm = new RegistrationForm(formRegistration, signUpPopup, api);
+
 new FormValidator(formLogin);
 new FormValidator(formRegistration);
 
