@@ -39,6 +39,10 @@ const loginPopup = new Popup(popupLogin, popupLoginList.openedClassPopup);
 const signUpPopup = new Popup(popupSignUp, popupSignupList.openedClassPopup);
 const infoPopup = new Popup(popupInfo, popupInfoList.openedClassPopup);
 
+//buttons
+const loginButton = document.querySelector('.login__button');
+const signUpButton = document.querySelector('.signUp__button');
+
 //forms
 const formLogin = document.querySelector('.popup-login__form');
 const loginForm = new LoginForm(formLogin, loginPopup, api);
@@ -48,22 +52,37 @@ const registrationForm = new RegistrationForm(formRegistration, signUpPopup, api
 new FormValidator(formLogin);
 new FormValidator(formRegistration);
 
+function deleteErrors() {
+  const errors = [...event.target.parentNode.querySelectorAll('.form__error')];
+  errors.forEach(error => error.textContent = '');
+}
+
 openPopupLogin.addEventListener('click', () => {
   loginPopup.open.call(loginPopup);
+  loginButton.setAttribute('disabled', true);
+  loginButton.classList.add('button_is-disabled');
+  loginButton.classList.add('form__button_disabled');
 });
 
 closeButtonLogin.addEventListener('click', () => {
   loginPopup.close.call(loginPopup);
+  formLogin.reset();
+  deleteErrors();
 });
 
 linkToRegistration.addEventListener('click', (event) => {
   loginPopup.close.call(loginPopup);
   event.preventDefault();
   signUpPopup.open.call(signUpPopup);
+  signUpButton.setAttribute('disabled', true);
+  signUpButton.classList.add('button_is-disabled');
+  signUpButton.classList.add('form__button_disabled');
 });
 
 closeButtonSignUp.addEventListener('click', () => {
   signUpPopup.close.call(signUpPopup);
+  formRegistration.reset();
+  deleteErrors();
 });
 
 linkToLogin.addEventListener('click', (event) => {

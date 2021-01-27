@@ -164,7 +164,8 @@
         <label class="form__label" for="formLoginPassword">Пароль</label>
         <input type="password" name="password" id="formLoginPassword" class="form__input" placeholder="Введите пароль">
         <span id="password-error" class="form__error"></span>
-        <button class="form__button button">Войти</button>
+        <span id="server-error" class="form__error form__error_center">Неправильный логин или пароль</span>
+        <button class="form__button button login__button">Войти</button>
         <p class="popup-login__footer">
           <span class="popup-login__text">или </span>
           <button class="popup-login__link">Зарегистрироваться</button>
@@ -178,8 +179,7 @@
       <h3 class="popup-registration__title">Регистрация</h3>
       <form class="popup-registration__form" name="formRegistration">
         <label class="form__label" for="formRegistrationEmail">Email</label>
-        <input type="text" name="email" id="formRegistrationEmail" class="form__input"
-          placeholder="Введите почту">
+        <input type="email" name="email" id="formRegistrationEmail" class="form__input" placeholder="Введите почту">
         <span id="email-error" class="form__error"></span>
         <label class="form__label" for="formRegistrationPassword">Пароль</label>
         <input type="password" name="password" id="formRegistrationPassword" class="form__input"
@@ -187,8 +187,9 @@
         <span id="password-error" class="form__error"></span>
         <label class="form__label" for="formRegistrationName">Имя</label>
         <input type="text" name="name" class="form__input" id="formRegistrationName" placeholder="Введите своё имя">
-        <span id="name-error" class="form__error form__error_center">Такой пользователь уже есть</span>
-        <button class="form__button button">Зарегистрироваться</button>
+        <span id="name-error" class="form__error"></span>
+        <span id="server-error" class="form__error form__error_center">Такой пользователь уже есть</span>
+        <button class="form__button button signUp__button">Зарегистрироваться</button>
         <p class="popup-registration__footer">
           <span class="popup-registration__text">или </span>
           <button class="popup-registration__link button">Войти</button>
