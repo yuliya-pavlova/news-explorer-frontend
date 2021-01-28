@@ -34,6 +34,23 @@ const config = {
 
 const api = new MainApi(config);
 
+api.getUserData()
+  .then(res => {
+    // if (localStorage.getItem('name') === res.name) {
+    //   new Error('Неавторизованная зона');
+    // }
+  })
+  .catch((err) => {
+    logout.classList.add('element_not-visible');
+    linkPersonal.classList.add('element_not-visible');
+    linkLogin.classList.remove('element_not-visible');
+});
+
+//header
+const linkLogin = document.querySelector('.main-menu__button-login');
+const linkPersonal = document.querySelector('.personal');
+const logout = document.querySelector('.main-menu__logout');
+
 //popups
 const loginPopup = new Popup(popupLogin, popupLoginList.openedClassPopup);
 const signUpPopup = new Popup(popupSignUp, popupSignupList.openedClassPopup);
@@ -45,7 +62,7 @@ const signUpButton = document.querySelector('.signUp__button');
 
 //forms
 const formLogin = document.querySelector('.popup-login__form');
-const loginForm = new LoginForm(formLogin, loginPopup, api);
+const loginForm = new LoginForm(formLogin, loginPopup, api, linkLogin, linkPersonal, logout);
 
 const formRegistration = document.querySelector('.popup-registration__form');
 const registrationForm = new RegistrationForm(formRegistration, signUpPopup, api);
@@ -57,6 +74,14 @@ function deleteErrors() {
   const errors = [...event.target.parentNode.querySelectorAll('.form__error')];
   errors.forEach(error => error.textContent = '');
 }
+
+logout.addEventListener('click', () => {
+  localStorage.removeItem('username');
+  localStorage.removeItem('token');
+  logout.classList.add('element_not-visible');
+  linkPersonal.classList.add('element_not-visible');
+  linkLogin.classList.remove('element_not-visible');
+});
 
 openPopupLogin.addEventListener('click', () => {
   loginPopup.open.call(loginPopup);

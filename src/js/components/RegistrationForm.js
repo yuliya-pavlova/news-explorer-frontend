@@ -21,6 +21,7 @@ export default class RegistrationForm {
   _setEventListeners = () => {
       this.formProfile.addEventListener('submit', (event) => {
         this._signUp();
+        this.formProfile.reset();
       });
   }
 }

@@ -40,4 +40,18 @@ export class MainApi {
       return json.then(err => { throw err; });
     })
   }
+
+  getUserData() {
+    return fetch(`${this.url}/users/me`, {
+      headers: this.headers,
+      credentials: 'include',
+    })
+    .then(res => {
+      let json = res.json();
+      if (res.ok) {
+        return json;
+      }
+      return json.then(err => { throw err; });
+    })
+  }
 }
