@@ -15,7 +15,6 @@ export default class LoginForm {
         .then(res => {
             this.popup.close.call(this.popup);
             localStorage.setItem('username', res.name);
-            localStorage.setItem('token', res.token);
             this.linkLogin.classList.add('element_not-visible');
             this.linkPersonal.classList.remove('element_not-visible');
             this.linkLogout.classList.remove('element_not-visible');

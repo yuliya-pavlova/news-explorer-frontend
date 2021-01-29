@@ -1,39 +1,30 @@
+// import {
+//   SERVER_ERR_MSG,
+// } from '../constants/error-messages';
+
 export default class NewsApi {
   constructor(options) {
-    this.baseUrl = options.baseUrl;
-    this.headers = options.headers;
-    this.apiKey = options.apiKey;
+    this._baseUrl = options.baseUrl;
+    this._apiKey = options.apiKey;
+    this._userInput = options.userInput;
+    this._today = options.today;
+    this._oneWeekAgo = options.oneWeekAgo;
+    this._pageSize = options.pageSize;
   }
 
-  static handleRes(res) {
+  async _checkIfOk(res) {
     if (res.ok) {
       return res.json();
     }
-
-    return res.json().then((result) => Promise.reject(result));
+    const json = await res.json();
+    return Promise.reject(json);
   }
 
-  static formatDate(date) {
-    return date.toISOString();
-  }
-
-  getDefaultParams() {
-    const today = new Date();
-    const weekAgo = new Date();
-    weekAgo.setDate(weekAgo.getDate() - 7);
-
-    return 'language=ru'
-      + `&apiKey=${this.apiKey}`
-      + `&from=${NewsApi.formatDate(today)}`
-      + `&to=${NewsApi.formatDate(weekAgo)}`
-      + '&pageSize=100';
-  }
-
-  getNews({ query }) {
-    return fetch(`${this.baseUrl}?${this.getDefaultParams()}&q=${query}`, {
-      method: 'GET',
-      headers: this.headers,
-    })
-      .then(NewsApi.handleRes);
+  getNews() {
+    return fetch(`${this._baseUrl}?q=${this._userInput.value}&from=${this._oneWeekAgo}&to=${this._today}&apiKey=${this._apiKey}&language=ru&pageSize=${this._pageSize}`)
+      .then((res) => this._checkIfOk(res))
+      .catch(() => {
+        throw new Error('Error');
+      });
   }
 }

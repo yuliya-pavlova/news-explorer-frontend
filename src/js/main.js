@@ -2,6 +2,7 @@ import LoginForm from './components/LoginForm';
 import RegistrationForm from './components/RegistrationForm';
 import Popup from './components/Popup';
 import { popupInfoList, popupLoginList, popupSignupList } from './constants/constants';
+import USER_NAME from './constants/user';
 import {
   popupLogin,
   openPopupLogin,
@@ -21,30 +22,16 @@ import {
   overlay,
  } from './constants/constantsDom';
 import { MainApi } from './api/MainApi';
+import NewsApi from './api/NewsApi';
 import FormValidator from './components/FormValidator';
+import {
+  API_CONFIG,
+  NEWS_API_CONFIG,
+} from '../js/constants/api-config';
 import '../pages/main.css';
 
-const config = {
-  url: 'https://mycoolnews.students.nomoreparties.space',
-  headers: {
-      'Content-Type': 'application/json',
-      credentials: 'include',
-  }
-}
-
-const api = new MainApi(config);
-
-api.getUserData()
-  .then(res => {
-    // if (localStorage.getItem('name') === res.name) {
-    //   new Error('Неавторизованная зона');
-    // }
-  })
-  .catch((err) => {
-    logout.classList.add('element_not-visible');
-    linkPersonal.classList.add('element_not-visible');
-    linkLogin.classList.remove('element_not-visible');
-});
+const api = new MainApi(API_CONFIG);
+const newsApi = new NewsApi(NEWS_API_CONFIG);
 
 //header
 const linkLogin = document.querySelector('.main-menu__button-login');
@@ -67,17 +54,40 @@ const loginForm = new LoginForm(formLogin, loginPopup, api, linkLogin, linkPerso
 const formRegistration = document.querySelector('.popup-registration__form');
 const registrationForm = new RegistrationForm(formRegistration, signUpPopup, api);
 
+// search
+const searchInput = document.querySelector('.search-form__input');
+const searchButton = document.querySelector('.search-form__button');
+const formSearch = document.querySelector('.search-form');
+
 new FormValidator(formLogin);
 new FormValidator(formRegistration);
 
 function deleteErrors() {
   const errors = [...event.target.parentNode.querySelectorAll('.form__error')];
   errors.forEach(error => error.textContent = '');
-}
+};
+
+searchButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('Serching...', searchInput.value);
+  if (searchInput.value.trim().length === 0) {
+    console.log('Введите ключевое слово')
+  }
+  else {
+    newsApi.getNews()
+    .then((res) => {
+      formSearch.reset();
+      return res;
+    })
+    .catch((err) => {
+      console.log(err.message);
+    });
+  }
+});
+
 
 logout.addEventListener('click', () => {
   localStorage.removeItem('username');
-  localStorage.removeItem('token');
   logout.classList.add('element_not-visible');
   linkPersonal.classList.add('element_not-visible');
   linkLogin.classList.remove('element_not-visible');
@@ -144,22 +154,27 @@ closeMobileMenu.addEventListener('click', () => {
   overlay.classList.remove('overlay_is-opened');
 });
 
-// function login() {
-//   const data = {
-//     email: loginForm.elements.email.value,
-//     password: loginForm.elements.password.value,
-//   };
-//   api.signin(data.email, data.password)
-//   .then(() => {
-//     loginPopup.close();
-//   })
-//   .catch(err => {
-//     console.log(err.message);
-//   });
-// }
+function not_auth() {
+  logout.classList.add('element_not-visible');
+  linkPersonal.classList.add('element_not-visible');
+  linkLogin.classList.remove('element_not-visible');
+}
 
-// loginForm.addEventListener('submit', (event) => {
-//   console.log(loginForm);
-//   event.preventDefault();
-//   login();
-// });
+function auth() {
+  api.getUserData()
+  .then(res => {
+    logout.querySelector('.username').textContent = res.name;
+    linkLogin.classList.add('element_not-visible');
+  })
+  .catch((err) => {
+    not_auth();
+  })
+}
+
+if (USER_NAME) {
+  console.log('Пользователь авторизован');
+  auth();
+} else {
+  console.log('Пользователь не авторизован');
+  not_auth();
+}

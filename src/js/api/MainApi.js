@@ -8,6 +8,7 @@ export class MainApi {
     return fetch(`${this.url}/signin`, {
       method: 'POST',
       headers: this.headers,
+      credentials: 'include',
       body: JSON.stringify({
         email: email,
         password: password,
