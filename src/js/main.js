@@ -25,7 +25,7 @@ import FormValidator from './components/FormValidator';
 import '../pages/main.css';
 
 const config = {
-  url: 'https://api.mycoolnews.students.nomoreparties.space',
+  url: 'https://mycoolnews.students.nomoreparties.space',
   headers: {
       'Content-Type': 'application/json',
       credentials: 'include',
