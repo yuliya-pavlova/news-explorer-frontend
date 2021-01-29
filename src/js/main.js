@@ -25,7 +25,7 @@ import FormValidator from './components/FormValidator';
 import '../pages/main.css';
 
 const config = {
-  url: NODE_ENV === 'production' ? 'https://api.mymesto.ml' : 'http://localhost:3000',
+  url: 'https://api.mycoolnews.students.nomoreparties.space',
   headers: {
       'Content-Type': 'application/json',
       credentials: 'include',
