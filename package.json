@@ -4,7 +4,7 @@
   "description": "Frontend for project news-explorer",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --https --mode development --open --watch",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --mode development --open --watch",
     "start": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
     "deploy": "npm run start && cross-env NODE_ENV=production gh-pages -d dist",
     "deploy2": "npm run start && scp -r ./dist/* praktikum@130.193.39.195:/home/praktikum/news-explorer-frontend"
