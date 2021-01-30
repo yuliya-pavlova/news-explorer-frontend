@@ -38,8 +38,8 @@ const newsApi = new NewsApi(NEWS_API_CONFIG);
 const cardsConteiner = document.querySelector('.cards');
 const cardList = new CardList(cardsConteiner);
 
-function newCardFactory(urlToImage, publishedAt, title, description,  source) {
-  return new Card(urlToImage, publishedAt, title, description,  source);
+function newCardFactory(urlToImage, publishedAt, title, description,  source, link, keyword) {
+  return new Card(urlToImage, publishedAt, title, description,  source, link, keyword, api);
 }
 
 // loading
@@ -120,28 +120,26 @@ function notFoundResult(show) {
 
 searchButton.addEventListener('click', (e) => {
   e.preventDefault();
-  //todo сообщение + дата
-  if (searchInput.value.trim().length === 0) {
+  const keyword = searchInput.value;
+  console.log('keyword', keyword);
+  notFoundResult(false);
+  showResult(false);
+  loadResult(true);
+  //todo сообщение + дефолтная картинка
+  if (keyword.trim().length === 0) {
     console.log('Введите ключевое слово')
   }
   else {
     newsApi.getNews()
     .then(res => {
-      notFoundResult(false);
-      showResult(false);
-      loadResult(true);
       cardList.clear();
-      showResult();
-      const cards = res.articles.map(card => newCardFactory(card.urlToImage, card.publishedAt, card.title, card.description,  card.source.name).create());
+      const cards = res.articles.map(card => newCardFactory(card.urlToImage, card.publishedAt, card.title, card.description,  card.source.name, card.url, keyword).create());
       cardList.render(cards);
       loadResult(false);
       cards.length === 0 ? notFoundResult(true) : showResult(true);
     })
     .catch((err) => {
       console.log(err.message);
-    })
-    .finally(res => {
-
     });
   }
 });

@@ -1,23 +1,50 @@
 import toDate from '../utils/to-date';
 
 export default class Card {
-  constructor(urlToImage, publishedAt, title, description,  source) {
+  constructor(urlToImage, publishedAt, title, description,  source,link, keyword, api) {
       this.urlToImage = urlToImage;
       this.publishedAt = publishedAt;
       this.title = title;
       this.description = description;
       this.source = source;
+      this.link = link;
+      this.keyword = keyword;
+      this.api = api;
   }
 
   // _like = (event) => {
   //     event.target.classList.toggle('place-card__like-icon_liked');
   // }
 
-  // _delete = (event) => {
+  // delete = (event) => {
   //     event.stopPropagation();
   //     this._removeEventListeners();
   //     this._view.remove();
   // }
+
+  save = (event) => {
+    event.stopPropagation();
+    console.log('Хочу сохранить статью', this._view);
+    const obj = {
+      keyword: this.keyword,
+      title: this.title,
+      text: this.description,
+      date: toDate(this.publishedAt),
+      source: this.source,
+      link: this.link,
+      image: this.urlToImage,
+    };
+    console.log(obj);
+    this.api.addArticle(obj)
+      .then((res) => {
+        // button.classList.remove('results__grid-card-mark_unselected');
+        // button.classList.add('results__grid-card-mark_selected');
+        this._id = res._id;
+        console.log('Добавлена статья с id = ', res._id)
+      })
+      .catch((err) => console.log(err));
+
+}
 
   // _showPicture = () => {
   //     this.openImagePopup(this.link);
@@ -56,6 +83,8 @@ export default class Card {
   }
 
   _setEventListeners = () => {
+    this._view.querySelector('.cards__save-icon').addEventListener('click', this.save);
+
       // this._view.querySelector('.place-card__delete-icon').addEventListener('click', this._delete);
       // this._view.querySelector('.place-card__like-icon').addEventListener('click', this._like);
       // this._view.querySelector('.place-card__image').addEventListener('click', this._showPicture);

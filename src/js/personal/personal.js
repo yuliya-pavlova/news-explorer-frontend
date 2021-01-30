@@ -2,10 +2,15 @@ import '../../pages/personal.css';
 import USER_NAME from '../constants/user';
 import { MainApi } from '../api/MainApi';
 import { API_CONFIG } from '../constants/api-config';
+import Card from '../components/Card';
+import CardList from '../components/CardList';
 
 (function() {
   window.onload = function() {
     const api = new MainApi(API_CONFIG);
+
+    const cardsConteiner = document.querySelector('.cards');
+    const cardList = new CardList(cardsConteiner);
 
     const logout = document.querySelector('.main-menu__button-logout');
 
@@ -14,6 +19,11 @@ import { API_CONFIG } from '../constants/api-config';
     const openMobileMenu = document.querySelector('.main-menu__button-open-black');
     const closeMobileMenu = document.querySelector('.main-menu__button-close-black');
     const overlay = document.querySelector('.overlay');
+
+    function newCardFactory(urlToImage, publishedAt, title, description,  source, link, keyword) {
+      return new Card(urlToImage, publishedAt, title, description,  source, link, keyword, api);
+    }
+
 
     openMobileMenu.addEventListener('click', () => {
       mainMenu.classList.add('main-menu_white');
@@ -54,6 +64,15 @@ import { API_CONFIG } from '../constants/api-config';
     if (USER_NAME) {
       console.log('Пользователь авторизован');
       auth();
+      api.getArticles()
+      .then(res => {
+        cardList.clear();
+        const cards = res.articles.map(card => newCardFactory(card.image, card.date, card.title, card.text, card.source, card.link, card.keyword).create());
+        cardList.render(cards);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
     } else {
       console.log('Пользователь не авторизован');
       not_auth();

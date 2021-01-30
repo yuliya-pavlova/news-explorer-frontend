@@ -4,6 +4,14 @@ export class MainApi {
       this.headers = config.headers;
   }
 
+  async _checkRes(res) {
+    if (res.ok) {
+      return res.json();
+    }
+    const json = await res.json();
+    return Promise.reject(json);
+  }
+
   signin(email, password) {
     return fetch(`${this.url}/signin`, {
       method: 'POST',
@@ -54,5 +62,37 @@ export class MainApi {
       }
       return json.then(err => { throw err; });
     })
+  }
+
+  addArticle(obj) {
+    return fetch(`${this.url}/articles`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(
+        {
+          title: obj.title,
+          text: obj.text,
+          date: obj.date,
+          keyword: obj.keyword,
+          source: obj.source,
+          link: obj.link,
+          image: obj.image,
+        },
+      ),
+    })
+      .then((res) => this._checkRes(res))
+      .catch((err) => Promise.reject(err));
+  }
+
+  getArticles() {
+    return fetch(`${this.url}/articles`, {
+      method: 'GET',
+      credentials: 'include',
+    })
+      .then((res) => this._checkRes(res))
+      .catch((err) => Promise.reject(err));
   }
 }
