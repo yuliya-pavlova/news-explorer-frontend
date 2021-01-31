@@ -11,6 +11,7 @@ import CardList from '../components/CardList';
 
     const cardsConteiner = document.querySelector('.cards');
     const cardList = new CardList(cardsConteiner);
+    const keywords = document.querySelectorAll('.cards__keywords');
 
     const logout = document.querySelector('.main-menu__button-logout');
 
@@ -20,8 +21,8 @@ import CardList from '../components/CardList';
     const closeMobileMenu = document.querySelector('.main-menu__button-close-black');
     const overlay = document.querySelector('.overlay');
 
-    function newCardFactory(urlToImage, publishedAt, title, description,  source, link, keyword) {
-      return new Card(urlToImage, publishedAt, title, description,  source, link, keyword, api);
+    function newCardFactory(urlToImage, publishedAt, title, description,  source, link, keyword, id) {
+      return new Card(urlToImage, publishedAt, title, description,  source, link, keyword, api, id);
     }
 
 
@@ -67,8 +68,10 @@ import CardList from '../components/CardList';
       api.getArticles()
       .then(res => {
         cardList.clear();
-        const cards = res.articles.map(card => newCardFactory(card.image, card.date, card.title, card.text, card.source, card.link, card.keyword).create());
+        const cards = res.articles.map(card => newCardFactory(card.image, card.date, card.title, card.text, card.source, card.link, card.keyword, card._id).createPersonalCard());
+        console.log(keywords);
         cardList.render(cards);
+        keywords.forEach(keyword => keyword.classList.remove('element_not-visible'));
       })
       .catch((err) => {
         console.log(err.message);

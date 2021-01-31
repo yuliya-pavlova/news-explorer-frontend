@@ -34,3 +34,7 @@
     justify-content: center;
   }
 }
+
+.cards__message:hover {
+  display: block;
+}
