@@ -73,6 +73,7 @@ const searchInput = document.querySelector('.search-form__input');
 const searchButton = document.querySelector('.search-form__button');
 const formSearch = document.querySelector('.search-form');
 
+
 new FormValidator(formLogin);
 new FormValidator(formRegistration);
 
@@ -125,7 +126,6 @@ searchButton.addEventListener('click', (e) => {
   notFoundResult(false);
   showResult(false);
   loadResult(true);
-  //todo сообщение + дефолтная картинка
   if (keyword.trim().length === 0) {
     console.log('Введите ключевое слово')
   }
@@ -137,6 +137,10 @@ searchButton.addEventListener('click', (e) => {
       cardList.render(cards);
       loadResult(false);
       cards.length === 0 ? notFoundResult(true) : showResult(true);
+      if (!USER_NAME) {
+        const saveButtons = document.querySelectorAll('.cards__save-icon');
+        saveButtons.forEach(button => button.setAttribute('disabled', true));
+      }
     })
     .catch((err) => {
       console.log(err.message);

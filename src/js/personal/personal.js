@@ -65,7 +65,6 @@ import UserInfo from '../components/UserInfo';
     }
 
     if (USER_NAME) {
-      console.log('Пользователь авторизован');
       auth();
       api.getArticles()
       .then(res => {
@@ -82,7 +81,6 @@ import UserInfo from '../components/UserInfo';
         console.log(err.message);
       });
     } else {
-      console.log('Пользователь не авторизован');
       not_auth();
     }
   };
