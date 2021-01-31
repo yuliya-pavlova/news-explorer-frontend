@@ -1,7 +1,3 @@
-const optionsForNewsApi = {
-  server: serverNews,
-};
-
 const popupLoginList = {
   openedClassPopup: 'popup-login_is-opened',
 };
@@ -23,8 +19,6 @@ const errorMessages = {
 
 export {
   errorMessages,
-  optionsForApi,
-  optionsForNewsApi,
   popupLoginList,
   popupSignupList,
   popupInfoList,
