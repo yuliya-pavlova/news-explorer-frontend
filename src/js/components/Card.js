@@ -11,11 +11,8 @@ export default class Card {
       this.keyword = keyword;
       this.api = api;
       this._id = id;
+      this._isSaved = false;
   }
-
-  // _like = (event) => {
-  //     event.target.classList.toggle('place-card__like-icon_liked');
-  // }
 
   delete = (event) => {
       event.stopPropagation();
@@ -29,6 +26,7 @@ export default class Card {
 
   save = (event) => {
     event.stopPropagation();
+    if (this._isSaved === false) {
     const obj = {
       keyword: this.keyword,
       title: this.title,
@@ -38,14 +36,27 @@ export default class Card {
       link: this.link,
       image: this.urlToImage,
     };
-    console.log(obj);
     this.api.addArticle(obj)
       .then((res) => {
         this._id = res.article._id;
+        this._view.querySelector('.cards__save-icon').classList.add('cards__save-icon_selected');
+        this._isSaved = true;
       })
       .catch((err) => console.log(err));
-
+    } else {
+      this._unSave(event);
+      this._view.querySelector('.cards__save-icon').classList.remove('cards__save-icon_selected');
+      this._isSaved = false;
+    }
 }
+
+  _unSave() {
+    this.api.deleteArticle(this._id)
+    .then(res => {
+      this._removeEventListenersPersonal();
+    })
+    .catch((err) => console.log(err));
+  }
 
   create() {
       const template = `
@@ -69,7 +80,13 @@ export default class Card {
       element.insertAdjacentHTML('afterbegin', template);
 
       this._view = element.firstElementChild;
-      this.urlToImage ? this._view.querySelector('.cards__image').src = this.urlToImage : this._view.querySelector('.cards__image').src = 'https://zakaztxt.ru/wp-content/uploads/2017/01/news.jpg';
+
+      if (this.urlToImage) {
+        this._view.querySelector('.cards__image').src = this.urlToImage
+      } else {
+        this._view.querySelector('.cards__image').src = 'https://zakaztxt.ru/wp-content/uploads/2017/01/news.jpg';
+        this.urlToImage = 'https://zakaztxt.ru/wp-content/uploads/2017/01/news.jpg';
+      }
 
       this._view.querySelector('.cards__date').textContent = toDate(this.publishedAt);
       this._view.querySelector('.cards__title').textContent = this.title;
@@ -108,7 +125,13 @@ export default class Card {
     this._view.querySelector('.cards__date').textContent = toDate(this.publishedAt);
     this._view.querySelector('.cards__title').textContent = this.title;
     this._view.querySelector('a').href = this.link;
-    this.urlToImage ? this._view.querySelector('.cards__image').src = this.urlToImage : this._view.querySelector('.cards__image').src = 'https://zakaztxt.ru/wp-content/uploads/2017/01/news.jpg';
+
+    if (this.urlToImage) {
+      this._view.querySelector('.cards__image').src = this.urlToImage
+    } else {
+      this._view.querySelector('.cards__image').src = 'https://zakaztxt.ru/wp-content/uploads/2017/01/news.jpg';
+      this.urlToImage = 'https://zakaztxt.ru/wp-content/uploads/2017/01/news.jpg';
+    }
 
     this._view.querySelector('.cards_description').textContent = this.description;
     this._view.querySelector('.cards__source').textContent = this.source;
