@@ -155,7 +155,7 @@ logout.addEventListener('click', () => {
   linkLogin.classList.remove('element_not-visible');
   if (document.querySelectorAll('.cards__save-icon').length > 0) {
     const saveButtons = document.querySelectorAll('.cards__save-icon');
-    saveButtons.forEach(button => button.addAttribute('disabled', true));
+    saveButtons.forEach(button => button.setAttribute('disabled', true));
   }
 });
 
