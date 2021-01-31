@@ -4,6 +4,8 @@ import { MainApi } from '../api/MainApi';
 import { API_CONFIG } from '../constants/api-config';
 import Card from '../components/Card';
 import CardList from '../components/CardList';
+import { toUpperCaseFirstCharacter } from '../utils/words';
+import UserInfo from '../components/UserInfo';
 
 (function() {
   window.onload = function() {
@@ -69,9 +71,12 @@ import CardList from '../components/CardList';
       .then(res => {
         cardList.clear();
         const cards = res.articles.map(card => newCardFactory(card.image, card.date, card.title, card.text, card.source, card.link, card.keyword, card._id).createPersonalCard());
-        console.log(keywords);
         cardList.render(cards);
-        keywords.forEach(keyword => keyword.classList.remove('element_not-visible'));
+        const keywordsArray = res.articles.map(item => {
+          return toUpperCaseFirstCharacter(item.keyword);
+        });
+        const userInfo = new UserInfo(keywordsArray);
+        userInfo.render();
       })
       .catch((err) => {
         console.log(err.message);

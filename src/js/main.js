@@ -42,7 +42,7 @@ function newCardFactory(urlToImage, publishedAt, title, description,  source, li
   return new Card(urlToImage, publishedAt, title, description,  source, link, keyword, api);
 }
 
-// loading
+//loading
 const loading = document.querySelector('.search-results__preloader');
 
 //header
@@ -64,7 +64,7 @@ const formLogin = document.querySelector('.popup-login__form');
 const loginForm = new LoginForm(formLogin, loginPopup, api, linkLogin, linkPersonal, logout);
 
 const formRegistration = document.querySelector('.popup-registration__form');
-const registrationForm = new RegistrationForm(formRegistration, signUpPopup, api);
+const registrationForm = new RegistrationForm(formRegistration, signUpPopup, api, infoPopup);
 
 // search
 const results = document.querySelector('.search-results__container');
