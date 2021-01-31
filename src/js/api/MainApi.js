@@ -95,4 +95,16 @@ export class MainApi {
       .then((res) => this._checkRes(res))
       .catch((err) => Promise.reject(err));
   }
+
+  deleteArticle(id) {
+    return fetch(`${this.url}/articles/${id}`, {
+      method: 'DELETE',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => this._checkRes(res))
+      .catch((err) => Promise.reject(err));
+  }
 }
