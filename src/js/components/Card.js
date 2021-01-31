@@ -1,4 +1,5 @@
 import toDate from '../utils/to-date';
+import USER_NAME from '../constants/user';
 
 export default class Card {
   constructor(urlToImage, publishedAt, title, description,  source,link, keyword, api, id) {
@@ -12,6 +13,8 @@ export default class Card {
       this.api = api;
       this._id = id;
       this._isSaved = false;
+      this._icon = null;
+      this._message = '';
   }
 
   delete = (event) => {
@@ -22,6 +25,15 @@ export default class Card {
         this._view.remove();
       })
       .catch((err) => console.log(err));
+  }
+
+  renderIcon = () => {
+    if (!USER_NAME) {
+      this._icon.onmouseover = () => {
+        this._message.classList.remove('element_not-visible');
+        setTimeout(() => this._message.classList.add('element_not-visible'), 1200);
+      }
+    }
   }
 
   save = (event) => {
@@ -61,7 +73,7 @@ export default class Card {
   create() {
       const template = `
       <div class="cards__item">
-        <p class="cards__message">Войдите, чтобы сохранять статьи</p>
+        <p class="cards__message element_not-visible">Войдите, чтобы сохранять статьи</p>
         <div class="cards__save-button">
           <button class="cards__save-icon"></button>
       </div>
@@ -94,7 +106,10 @@ export default class Card {
 
       this._view.querySelector('.cards_description').textContent = this.description;
       this._view.querySelector('.cards__source').textContent = this.source;
+      this._icon = this._view.querySelector('.cards__save-button');
+      this._message = this._view.querySelector('.cards__message');
       this._setEventListeners();
+      this.renderIcon();
       return this._view;
   }
 
@@ -125,6 +140,8 @@ export default class Card {
     this._view.querySelector('.cards__date').textContent = toDate(this.publishedAt);
     this._view.querySelector('.cards__title').textContent = this.title;
     this._view.querySelector('a').href = this.link;
+    this._icon = this._view.querySelector('.cards__save-button');
+    this._message = this._view.querySelector('.cards__message');
 
     if (this.urlToImage) {
       this._view.querySelector('.cards__image').src = this.urlToImage
@@ -138,6 +155,10 @@ export default class Card {
 
     this._view.querySelector('.cards__keywords').textContent = this.keyword;
     this._setEventListenersPersonal();
+    this._icon.onmouseover = () => {
+      this._message.classList.remove('element_not-visible');
+      setTimeout(() => this._message.classList.add('element_not-visible'), 1200);
+    }
     return this._view;
 }
 

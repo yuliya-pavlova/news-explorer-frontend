@@ -122,7 +122,6 @@ function notFoundResult(show) {
 searchButton.addEventListener('click', (e) => {
   e.preventDefault();
   const keyword = searchInput.value;
-  console.log('keyword', keyword);
   notFoundResult(false);
   showResult(false);
   loadResult(true);
@@ -141,6 +140,7 @@ searchButton.addEventListener('click', (e) => {
         const saveButtons = document.querySelectorAll('.cards__save-icon');
         saveButtons.forEach(button => button.setAttribute('disabled', true));
       }
+
     })
     .catch((err) => {
       console.log(err.message);
@@ -221,9 +221,7 @@ closeMobileMenu.addEventListener('click', () => {
 });
 
 if (USER_NAME) {
-  console.log('Пользователь авторизован');
   auth();
 } else {
-  console.log('Пользователь не авторизован');
   not_auth();
 }
