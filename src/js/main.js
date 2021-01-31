@@ -153,6 +153,10 @@ logout.addEventListener('click', () => {
   logout.classList.add('element_not-visible');
   linkPersonal.classList.add('element_not-visible');
   linkLogin.classList.remove('element_not-visible');
+  if (document.querySelectorAll('.cards__save-icon').length > 0) {
+    const saveButtons = document.querySelectorAll('.cards__save-icon');
+    saveButtons.forEach(button => button.addAttribute('disabled', true));
+  }
 });
 
 openPopupLogin.addEventListener('click', () => {
