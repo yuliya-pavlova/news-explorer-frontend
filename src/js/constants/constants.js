@@ -1,15 +1,3 @@
-const server = NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://api.my-news-explorer.ml';
-const serverNews = NODE_ENV === 'development' ? 'https://newsapi.org/v2/' : 'https://nomoreparties.co/news/v2/';
-
-//const server = 'https://api.my-news-explorer.ml';
-
-const optionsForApi = {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  url: server,
-};
-
 const optionsForNewsApi = {
   server: serverNews,
 };
