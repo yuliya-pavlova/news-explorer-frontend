@@ -7,7 +7,7 @@ const NUMBER_OF_PAGES = 100;
 
 const NEWS_API_CONFIG = {
   baseUrl: 'https://nomoreparties.co/news/v2/everything',
-  apiKey: '0f45b37c67a34232a80824e74e6d0211',
+  apiKey: '871c65649e374678bd0cfbb0f08c54c8',
   userInput: SEARCH_INPUT,
   today: getDate(TODAY),
   oneWeekAgo: getDate(DAYS_AGO),

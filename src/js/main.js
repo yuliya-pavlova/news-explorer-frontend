@@ -133,7 +133,7 @@ searchButton.addEventListener('click', (e) => {
     .then(res => {
       cardList.clear();
       const cards = res.articles.map(card => newCardFactory(card.urlToImage, card.publishedAt, card.title, card.description,  card.source.name, card.url, keyword).create());
-      cardList.render(cards);
+      cardList.renderInit(cards);
       loadResult(false);
       cards.length === 0 ? notFoundResult(true) : showResult(true);
       if (!USER_NAME) {
