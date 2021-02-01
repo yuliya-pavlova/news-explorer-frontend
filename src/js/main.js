@@ -72,7 +72,7 @@ const noResults = document.querySelector('.search-results__not-found');
 const searchInput = document.querySelector('.search-form__input');
 const searchButton = document.querySelector('.search-form__button');
 const formSearch = document.querySelector('.search-form');
-
+const searchError = document.querySelector('.search-form__error');
 
 new FormValidator(formLogin);
 new FormValidator(formRegistration);
@@ -119,16 +119,25 @@ function notFoundResult(show) {
   show ? noResults.classList.remove('element_not-visible') : noResults.classList.add('element_not-visible')
 };
 
+function haveKeyword() {
+  const keyword = searchInput.value;
+  if (keyword.trim().length === 0) {
+    searchError.classList.remove('element_not-visible');
+    return false;
+  }
+  else {
+    searchError.classList.add('element_not-visible');
+    return true;
+  }
+}
+
 searchButton.addEventListener('click', (e) => {
   e.preventDefault();
   const keyword = searchInput.value;
   notFoundResult(false);
   showResult(false);
-  loadResult(true);
-  if (keyword.trim().length === 0) {
-    console.log('Введите ключевое слово')
-  }
-  else {
+  if (haveKeyword()) {
+    loadResult(true);
     newsApi.getNews()
     .then(res => {
       cardList.clear();

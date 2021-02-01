@@ -17,8 +17,10 @@ export default class CardList {
   }
 
   renderInit(cards) {
-    this.cards = cards;
-    this.renderParts();
+    if (cards.length > 0) {
+      this.cards = cards;
+      this.renderParts();
+    }
   }
 
   renderParts = () => {
