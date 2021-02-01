@@ -9,9 +9,9 @@
 - Запустить сборку production-билда - `npm run start`
 - Разместить production-билд на github pages - `npm run deploy`
 
-## Ссылка на github pages:
-https://yuliya-pavlova.github.io/news-explorer-frontend
-https://yuliya-pavlova.github.io/news-explorer-frontend/personal.html
+## Ссылка на ресурс:
+Сайт: https://mycoolnews.students.nomoreparties.space 
+Репозиторий с бэкендом: https://github.com/yuliya-pavlova/news-explorer-api 
  
 Используемые технологии:  
 * Инфраструктура Git, Webpack 

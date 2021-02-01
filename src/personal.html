@@ -7,7 +7,7 @@
   <meta name="author" content="Чечульникова Юлия">
   <meta name="description" content="Поиск новостей">
   <title>Сохраненные статьи</title>
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+  <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.chunks.personal.css %>">
   <link rel="icon" href="<%=require('./images/favicon.svg')%>" type="image/x-icon">
 </head>
 
@@ -19,10 +19,10 @@
           <a class="main-menu__link main-menu__link_bold" href="./index.html">NewsExplorer</a>
           <div class="main-menu__list">
             <a class="main-menu__link" href="./index.html">Главная</a>
-            <a class="main-menu__link main-menu__link_selected-black" href="./personal.html">Сохранённые статьи</a>
+            <a class="main-menu__link main-menu__link_selected-black personal" href="./personal.html">Сохранённые статьи</a>
             <div class="">
               <button class=" main-menu__button main-menu__button-logout">
-                <span>Грета</span>
+                <span class="username"></span>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M10 6L6 6L6 18H10V20H6C4.89543 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H10V6ZM17.5856 13L13.2927 17.1339L14.707 18.4958L21.4141 12.0371L14.707 5.57837L13.2927 6.9402L17.5856 11.0741H8V13H17.5856Z"
@@ -37,102 +37,18 @@
       </nav>
       <section class="articles-info">
         <h1 class="articles-info__title">Сохранённые статьи</h1>
-        <h2 class="articles-info__subtitle">Грета, у вас 5 сохранённых статей</h2>
-        <p class="articles-info__keywords"> По ключевым словам: <span
-            class="articles-info__keywords articles-info__keywords_bold">Природа, Тайга</span> и <span
-            class="articles-info__keywords articles-info__keywords_bold">2-м другим</span></p>
+        <h2 class="articles-info__subtitle"></h2>
+        <p class="articles-info__keywords">
+          По ключевым словам: <span class="articles-info__keywords articles-info__keywords_word1 articles-info__keywords_bold"></span>
+          <span class="articles-info__keywords articles-info__keywords_word2 articles-info__keywords_bold"></span><span class="articles-info__keywords articles-info__keywords_word3 articles-info__keywords_bold">и <span class="articles-info__keywords articles-info__keywords_word4 articles-info__keywords_bold"></span></span>
+
+        </p>
       </section>
     </header>
     <div class="content">
       <section class="search-results">
         <div class="search-results__container">
           <div class="cards">
-            <div class="cards__item">
-              <p class="cards__keywords">Природа</p>
-              <div class="cards__save-button">
-                <button class="cards__delete-icon"></button>
-              </div>
-              <a href="./personal.html">
-                <img class="cards__image" src="<%=require('./images/1.png')%>" alt="Зеленое растение">
-              </a>
-              <span class="cards__date">2 августа, 2019</span>
-              <div class="cards__text-container">
-                <h3 class="cards__title">Национальное достояние – парки</h3>
-                <p class="cards_description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                  складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
-                  приобщиться к природе.</p>
-              </div>
-              <p class="cards__source">Дзен</p>
-            </div>
-            <div class="cards__item">
-              <p class="cards__keywords">Природа</p>
-              <p class="cards__message element_not-visible">Убрать из сохраненных</p>
-              <div class="cards__save-button">
-
-                <button class="cards__delete-icon cards__delete-icon_selected"></button>
-              </div>
-              <a href="./personal.html">
-                <img class="cards__image" src="<%=require('./images/2.png')%>" alt="Снимок поля с высоты птичьего полета">
-              </a>
-              <span class="cards__date">2 августа, 2019</span>
-              <div class="cards__text-container">
-                <h3 class="cards__title">Лесные огоньки: история одной фотографии</h3>
-                <p class="cards_description">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-                  чтобы запечатлеть ускользающую красоту одного
-                  из местных чудес природы.</p>
-              </div>
-              <p class="cards__source">Афиша</p>
-            </div>
-            <div class="cards__item">
-              <p class="cards__keywords">Тайга</p>
-              <div class="cards__save-button">
-                <button class="cards__delete-icon"></button>
-              </div>
-              <a href="./personal.html">
-                <img class="cards__image" src="<%=require('./images/3.png')%>" alt="Цветок в вазе">
-              </a>
-              <span class="cards__date">2 августа, 2019</span>
-              <div class="cards__text-container">
-                <h3 class="cards__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-                <p class="cards_description">Знаменитый фотограф снимает первозданные леса России, чтобы рассказать о
-                  необходимости их сохранения. В этот раз он отправился в Двинско-Пинежскую тайгу, где...</p>
-              </div>
-              <p class="cards__source">Медиазона</p>
-            </div>
-            <div class="cards__item">
-              <p class="cards__keywords">Парки</p>
-              <div class="cards__save-button">
-                <button class="cards__delete-icon"></button>
-              </div>
-              <a href="./personal.html">
-                <img class="cards__image" src="<%=require('./images/1.png')%>" alt="Зеленое растение">
-              </a>
-              <span class="cards__date">2 августа, 2019</span>
-              <div class="cards__text-container">
-                <h3 class="cards__title">Национальное достояние – парки</h3>
-                <p class="cards_description">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала
-                  складываться система национальных парков – охраняемых территорий, где и сегодня каждый может
-                  приобщиться к природе.</p>
-              </div>
-              <p class="cards__source">Дзен</p>
-            </div>
-            <div class="cards__item">
-              <p class="cards__keywords">Фотография</p>
-              <div class="cards__save-button">
-                <button class="cards__delete-icon"></button>
-              </div>
-              <a href="./personal.html">
-                <img class="cards__image" src="<%=require('./images/2.png')%>" alt="Снимок поля с высоты птичьего полета">
-              </a>
-              <span class="cards__date">2 августа, 2019</span>
-              <div class="cards__text-container">
-                <h3 class="cards__title">Лесные огоньки: история одной фотографии</h3>
-                <p class="cards_description">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-                  чтобы запечатлеть ускользающую красоту одного
-                  из местных чудес природы.</p>
-              </div>
-              <p class="cards__source">Афиша</p>
-            </div>
           </div>
         </div>
         <div class="search-results__preloader element_not-visible">
@@ -164,7 +80,7 @@
     </footer>
   </div>
   <div class="overlay"></div>
-  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.personal.entry %>"></script>
 </body>
 
 </html>
